@@ -905,7 +905,7 @@ void TEST_INVERTI(campo_di_gioco campo_giocatore, int RIGHE, int COLONNE){
 	}
 }
 
-/*****************************************************
+/*************************************************//**
 * main:	chiede all'utente di immettere un codice, poi           
 *	chiama una funzione per eseguire l'azione                   
 *   richiesta. Continua fino a quando la variabile              
@@ -919,27 +919,38 @@ int main()
 * @param fine_gioco indica quando il main chiudo il ciclo e finisce il gioco
 * @param select indica che voce del menu ho selezionato
 * @param turno indica il turno del giocatore attuale
+* @param giocatori indica la modalità di gioco multi o single player
 */
-	bool_t fine_gioco = FALSE;
-	int select = 0; 
-	int turno = 1;
-/**creo i punteggi */
-	int   punteggio_1 = 0;
-    int   punteggio_2 = 0;
-	bool_t vittoria = FALSE;
-/**Variabile per il numero di giocatori*/
-    giocatori_t giocatori = NOT_SELECTED;
+  bool_t fine_gioco = FALSE;
+  int select = 0; 
+  int turno = 1;
+  giocatori_t giocatori = NOT_SELECTED;
 
-/** creo i campi da gioco del giocatore 1 e 2 */
+/** Variabili per il punteggio dei giocatori: 
+* @param punteggio_1 indica il punteggio del giocatore 1
+* @param punteggio_2 indica il punteggio del giocatore 2
+* @param vittoria indica che uno dei due giocatori ha vinto
+*/
+  int   punteggio_1 = 0;
+  int   punteggio_2 = 0;
+  bool_t vittoria = FALSE;
+
+/** creo i campi da gioco del giocatore 1 e 2 
+ * @param campo_giocatore_1 puntatore al campo del giocatore 1
+ * @param campo_giocatore_2 puntatore al campo del giocatore 2
+ */
 	campo_di_gioco campo_giocatore_1 = (campo_di_gioco) malloc(RIGHE*COLONNE*sizeof(riquadro_t));
 	campo_di_gioco campo_giocatore_2 = (campo_di_gioco) malloc(RIGHE*COLONNE*sizeof(riquadro_t));
     
-/** inizializzare i campi da gioco */
+/**
+ * @brief  inizializzare i campi da gioco 
+ * @see init(campo_di_gioco piano, int riga, int colonna)
+ */
   init(campo_giocatore_1, RIGHE, COLONNE);
   init(campo_giocatore_2, RIGHE, COLONNE);
  
   
-  /** messaggio di benvenuto */  
+  /** @brief messaggio di benvenuto */
   printf("\n                                 BENVENUTI IN\n\n");
   printf(" /////////////////// XXXXX  XXXXX  XXXXX  XXXX    X    	X   X  ///////////////////\n");
   printf(" ///////////////////   X    X        X    X   X   X    	 X X   ///////////////////\n");
