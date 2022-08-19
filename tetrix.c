@@ -1,8 +1,9 @@
-/*
-*Nome programmatore: Cecchin Alessandro
-*Programma:  X-Tetris
-*Regole tetris: https://it.wikipedia.org/wiki/Tetris
-*/
+/**
+ * @brief 
+ * Nome programmatore: Cecchin Alessandro
+ *Programma:  X-Tetris
+ *Regole tetris: https://it.wikipedia.org/wiki/Tetris
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -107,12 +108,17 @@ typedef enum bool_e
 const int RIGHE = row;
 const int COLONNE = column;
 
-/*Definisco variabili globali per l'errore di uscire dalle righe colonne*/
+/**
+ * @brief Definisco variabili globali per l'errore di uscire dalle righe colonne
+ * 
+ */
 bool_t Perdita_uscita_campo = FALSE;
 /*Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer*/
 bool_t inverti_campo = FALSE;
 
-/*Inizializzatore*/
+/**
+ * @brief Inizializzatore: inizializza il campo da gioco a VUOTO
+ */
 void init(campo_di_gioco piano, int riga, int colonna) {
     int r,c;
     for (r=0; r<riga; r++) {
@@ -122,7 +128,11 @@ void init(campo_di_gioco piano, int riga, int colonna) {
     }
 }
 
-/*Funzione che uso per visualizzare un ateprima del tetramino scelto dal giocatore*/
+/**
+ * @brief Funzione che uso per visualizzare un ateprima del tetramino scelto dal giocatore
+ * 
+ * @param tetramino 
+ */
 void stampa_anteprima(int * tetramino){
 	
 	printf("-ANTEPRIMA scelta 1-\n");
@@ -1048,7 +1058,7 @@ if(giocatori == MULTI_PLAYER)
    		             turno = 1;
               break;
       }
-/*Vittoria dopo i 50 punti*/
+/**Vittoria dopo i 50 punti*/
 	  if(punteggio_1 >= 50){
 	     vittoria = TRUE;
          printf("Complimenti Giocatore 1 hai raggiunto 50 punti, HAI VINTO! arrivederci!\n");
