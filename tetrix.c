@@ -1,8 +1,12 @@
 /**
+ * @file tetrix.c
+ * @author Alessandro Cecchin (859869@stud.unive.it)
  * @brief 
- * Nome programmatore: Cecchin Alessandro
- *Programma:  X-Tetris
- *Regole tetris: https://it.wikipedia.org/wiki/Tetris
+ * @version 1
+ * @date 2022-08-19
+ * 
+ * @copyright Copyright (c) 2022
+ * 
  */
 
 #include <stdio.h>
