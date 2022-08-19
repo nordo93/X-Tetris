@@ -8,10 +8,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*the definition of constant values*/
+/**
+ * @brief definisco il numero di righe e colonne
+ * @def row è il numero di righe
+ * @def column è il numero di colonne
+ * @def size è la grandezza del vettore tetramino
+ */
 #define row 15
 #define column 10
-#define size 4  /*grandezza vettore tetramino*/
+#define size 4 
 
 /*I pezzi di Tetris: I, J, L, O, S, T, Z
 * Logica del gioco
@@ -898,38 +903,37 @@ void TEST_INVERTI(campo_di_gioco campo_giocatore, int RIGHE, int COLONNE){
 	}
 }
 
-/****************************************************************
+/*****************************************************************
 * main:	chiede all'utente di immettere un codice, poi           *
-*		chiama una funzione per eseguire l'azione                   *
+*	chiama una funzione per eseguire l'azione                   *
 *   richiesta. Continua fino a quando la variabile              *
 *   fine_gioco non diventa positiva. stampa messaggio           *
-*		di errore quando il codice e' sbagliato.                    *
+*	di errore quando il codice e' sbagliato.                    *
 ****************************************************************/
 
 int main()
 {
-/*Variabili per utilizzo del menu*/
+/**Variabili per utilizzo del menu*/
 	bool_t fine_gioco = FALSE;
 	int select = 0; 
 	int turno = 1;
-/* creo i punteggi */
+/**creo i punteggi */
 	int   punteggio_1 = 0;
     int   punteggio_2 = 0;
 	bool_t vittoria = FALSE;
-/*Variabile per il numero di giocatori*/
+/**Variabile per il numero di giocatori*/
     giocatori_t giocatori = NOT_SELECTED;
 
-/* creo i campi da gioco del giocatore 1 e 2 */
+/** creo i campi da gioco del giocatore 1 e 2 */
 	campo_di_gioco campo_giocatore_1 = (campo_di_gioco) malloc(RIGHE*COLONNE*sizeof(riquadro_t));
 	campo_di_gioco campo_giocatore_2 = (campo_di_gioco) malloc(RIGHE*COLONNE*sizeof(riquadro_t));
     
-/* inizializzare i campi da gioco */
-
+/** inizializzare i campi da gioco */
   init(campo_giocatore_1, RIGHE, COLONNE);
   init(campo_giocatore_2, RIGHE, COLONNE);
  
-  /* messaggio di benvenuto */
-    
+  
+  /** messaggio di benvenuto */  
   printf("\n                                 BENVENUTI IN\n\n");
   printf(" /////////////////// XXXXX  XXXXX  XXXXX  XXXX    X    	X   X  ///////////////////\n");
   printf(" ///////////////////   X    X        X    X   X   X    	 X X   ///////////////////\n");
