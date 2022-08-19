@@ -881,216 +881,210 @@
 \DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00905}00905     \}}
 \DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00906}00906 \}}
 \DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00907}00907 }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00908}00908 \textcolor{comment}{/*****************************************************}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00909}00909 \textcolor{comment}{* main: chiede all'utente di immettere un codice, poi           }}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00910}00910 \textcolor{comment}{*   chiama una funzione per eseguire l'azione                   }}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00911}00911 \textcolor{comment}{*   richiesta. Continua fino a quando la variabile              }}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00912}00912 \textcolor{comment}{*   fine\_gioco non diventa positiva. stampa messaggio           }}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00913}00913 \textcolor{comment}{*   di errore quando il codice e' sbagliato.                    }}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00914}00914 \textcolor{comment}{*****************************************************/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00915}00915 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00908}00908 \textcolor{comment}{/*************************************************/}}
 \DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00916}\mbox{\hyperlink{tetrix_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00916}} \textcolor{keywordtype}{int} \mbox{\hyperlink{tetrix_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
 \DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00917}00917 \{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00923}00923     \mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\_t}} fine\_gioco = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00924}00924     \textcolor{keywordtype}{int} select = 0; }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00925}00925     \textcolor{keywordtype}{int} turno = 1;}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00927}00927     \textcolor{keywordtype}{int}   punteggio\_1 = 0;}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00928}00928     \textcolor{keywordtype}{int}   punteggio\_2 = 0;}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00929}00929     \mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\_t}} vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00931}00931     \mbox{\hyperlink{tetrix_8c_a727a6f710e0f7bcf136b908b5cff365d}{giocatori\_t}} \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} = \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faa616ede6b6f3a1d38a724d1168ddf1adf}{NOT\_SELECTED}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00932}00932 }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00934}00934     \mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\_di\_gioco}} campo\_giocatore\_1 = (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\_di\_gioco}}) malloc(\mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}*\mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{tetrix_8c_aa7f1ff8f4ac9b5f9dc398111841d9d77}{riquadro\_t}}));}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00935}00935     \mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\_di\_gioco}} campo\_giocatore\_2 = (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\_di\_gioco}}) malloc(\mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}*\mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{tetrix_8c_aa7f1ff8f4ac9b5f9dc398111841d9d77}{riquadro\_t}}));}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00936}00936     }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00938}00938   \mbox{\hyperlink{tetrix_8c_a5888954e236254cc7e6ff5cffedbf90f}{init}}(campo\_giocatore\_1, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00939}00939   \mbox{\hyperlink{tetrix_8c_a5888954e236254cc7e6ff5cffedbf90f}{init}}(campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00940}00940  }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00941}00941   }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00943}00943   printf(\textcolor{stringliteral}{"{}\(\backslash\)n                                 BENVENUTI IN\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00944}00944   printf(\textcolor{stringliteral}{"{} /////////////////// XXXXX  XXXXX  XXXXX  XXXX    X       X   X  ///////////////////\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00945}00945   printf(\textcolor{stringliteral}{"{} ///////////////////   X    X        X    X   X   X        X X   ///////////////////\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00946}00946   printf(\textcolor{stringliteral}{"{} ///////////////////   X    XXXX     X    XXXX    X  XX   X    ///////////////////\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00947}00947   printf(\textcolor{stringliteral}{"{} ///////////////////   X    X        X    X  X    X        X X   ///////////////////\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00948}00948   printf(\textcolor{stringliteral}{"{} ///////////////////   X    XXXXX    X    X   X   X   X   X  ///////////////////\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00949}00949   printf(\textcolor{stringliteral}{"{}ISTRUZIONI:\(\backslash\)n -\/ X-\/Tetris e' una versione avanzata del gioco originale del Tetris.\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00950}00950   printf(\textcolor{stringliteral}{"{} -\/ Il campo di gioco e\(\backslash\)' largo 10 e alto 15 posizioni.\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00951}00951   printf(\textcolor{stringliteral}{"{} -\/ La rimozione di una riga vale 1 punto, la rimozione di due righe con un solo pezzo vale 3 punti,\(\backslash\)n tre righe 6 punti, quattro righe 12 punti..\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00952}00952   printf(\textcolor{stringliteral}{"{}Per iniziare a giocare premi INVIO.\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00953}00953   getchar();}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00954}00954   printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00955}00955 }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00956}00956 \textcolor{keywordflow}{do}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00957}00957 \{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00958}00958   \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} != \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faaf64ffcc804f85cc65366369011db5768}{MULTI\_PLAYER}} \&\& \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} != \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faae0c9d3e5c71ae4b23a63b36eaac2f918}{SINGLE\_PLAYER}})\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00959}00959     printf(\textcolor{stringliteral}{"{}Ciao :), In quanti giocate?\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00960}00960     printf(\textcolor{stringliteral}{"{}1. Single Player -\/ Un solo giocatore\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00961}00961     printf(\textcolor{stringliteral}{"{}2. Multiplayer -\/ due giocatori\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00962}00962     printf(\textcolor{stringliteral}{"{}Scelta: "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00963}00963     scanf(\textcolor{stringliteral}{"{} \%d"{}}, \&\mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00964}00964       \textcolor{keywordflow}{while} (getchar() != \textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{comment}{/*salta alla fine della riga*/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00965}00965         ;}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00966}00966     printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00967}00967     \textcolor{keywordflow}{switch} (\mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}})}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00968}00968       \{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00969}00969         \textcolor{keywordflow}{case} 1: printf(\textcolor{stringliteral}{"{}Giochi da solo, bene!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00970}00970               \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00971}00971         \textcolor{keywordflow}{case} 2: printf(\textcolor{stringliteral}{"{}Giochi in compagnia, bene!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00972}00972                 \mbox{\hyperlink{tetrix_8c_adf818de7cbdc4a4cf738bfbfe3be289c}{TEST\_INVERTI}}(campo\_giocatore\_1, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00973}00973                 \mbox{\hyperlink{tetrix_8c_a3db906a4d562c2e7b2e92b92849943ca}{raddoppia\_tetramini}}(); \textcolor{comment}{/*Raddopia il numero di tetramini per il multiplayer*/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00974}00974               \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00975}00975         \textcolor{keywordflow}{default}: printf(\textcolor{stringliteral}{"{}!!! ATTENZIONE !!!:\(\backslash\)tScelta sbagliata. Selezionane un altra.\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00976}00976               }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00977}00977       \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00978}00978     \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00979}00979 }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00980}00980 \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} == \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faae0c9d3e5c71ae4b23a63b36eaac2f918}{SINGLE\_PLAYER}})}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00981}00981   \{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00982}00982     punteggio\_1 = punteggio\_1 + \mbox{\hyperlink{tetrix_8c_a682f38efcb81ebea210a63c2d1dc6aca}{calcola\_punti}}(campo\_giocatore\_1,\mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00983}00983     \mbox{\hyperlink{tetrix_8c_adc63289992b5330a17a91eb5e8924fd0}{stampa}}(campo\_giocatore\_1,campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faae0c9d3e5c71ae4b23a63b36eaac2f918}{SINGLE\_PLAYER}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00984}00984     printf(\textcolor{stringliteral}{"{}Turno del giocatore 1.\(\backslash\)nPunteggio: \%d.\(\backslash\)n\(\backslash\)n"{}}, punteggio\_1);}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00985}00985 }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00986}00986     printf(\textcolor{stringliteral}{"{}Menu\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00987}00987     printf(\textcolor{stringliteral}{"{}1. Seleziona tetramino\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00988}00988     printf(\textcolor{stringliteral}{"{}2. Pezzi disponibili\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00989}00989     printf(\textcolor{stringliteral}{"{}3. Exit\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00990}00990     }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00991}00991     printf(\textcolor{stringliteral}{"{}Scelta: "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00992}00992     scanf(\textcolor{stringliteral}{"{} \%d"{}}, \&select);}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00993}00993         \textcolor{keywordflow}{while} (getchar() != \textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{comment}{/*salta alla fine della riga*/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00994}00994           ;}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00995}00995     printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00996}00996     }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00997}00997       \textcolor{keywordflow}{switch} (select)}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00998}00998       \{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00999}00999         \textcolor{keywordflow}{case} 1: \mbox{\hyperlink{tetrix_8c_a6e65a46c4e3bacc4754e0fe0af59ede6}{seleziona\_tetramino}}(campo\_giocatore\_1, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, 1);}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01000}01000               \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01001}01001         \textcolor{keywordflow}{case} 2: \textcolor{comment}{/*altra operazione*/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01002}01002               \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01003}01003         \textcolor{keywordflow}{case} 3: printf(\textcolor{stringliteral}{"{}Arrivederci\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01004}01004               fine\_gioco = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}}; }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01005}01005               \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01006}01006         \textcolor{keywordflow}{default}: printf(\textcolor{stringliteral}{"{}!!! ATTENZIONE !!!:\(\backslash\)tScelta sbagliata. Selezionane un altra.\(\backslash\)n"{}}); \textcolor{comment}{/*Cambio turno in modo da continuare il ciclo sul giocatore attuale*/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01007}01007               }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01008}01008       \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01009}01009     \textcolor{keywordflow}{if}(punteggio\_1 >= 50)\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01010}01010        vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01011}01011        printf(\textcolor{stringliteral}{"{}Complimenti hai raggiunto 50 punti, arrivederci!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01012}01012     \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01013}01013     \textcolor{comment}{/*Perdita per uscita dal campo*/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01014}01014     \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}{Perdita\_uscita\_campo}} != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}})\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01015}01015       vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01016}01016       printf(\textcolor{stringliteral}{"{}HAI PERSO! Sei uscito dal campo arrivederci!\(\backslash\)n"{}}); }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01017}01017       \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01018}01018     }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01019}01019     \textcolor{keywordflow}{if}(vittoria != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}})}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01020}01020       fine\_gioco = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01021}01021   \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01022}01022 }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01023}01023 \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} == \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faaf64ffcc804f85cc65366369011db5768}{MULTI\_PLAYER}})   }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01024}01024 \{ }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01025}01025     \textcolor{keywordflow}{if}(turno == 1)}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01026}01026     \{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01027}01027       \mbox{\hyperlink{tetrix_8c_adc63289992b5330a17a91eb5e8924fd0}{stampa}}(campo\_giocatore\_1,campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faaf64ffcc804f85cc65366369011db5768}{MULTI\_PLAYER}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01028}01028       printf(\textcolor{stringliteral}{"{}Turno del giocatore 1.\(\backslash\)nPunteggio: \%d.\(\backslash\)n\(\backslash\)n"{}}, punteggio\_1);}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01029}01029     \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01030}01030       \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01031}01031         \mbox{\hyperlink{tetrix_8c_adc63289992b5330a17a91eb5e8924fd0}{stampa}}(campo\_giocatore\_1,campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faaf64ffcc804f85cc65366369011db5768}{MULTI\_PLAYER}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01032}01032         printf(\textcolor{stringliteral}{"{}Turno del giocatore 2.\(\backslash\)nPunteggio: \%d.\(\backslash\)n\(\backslash\)n"{}}, punteggio\_2);}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01033}01033         \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01034}01034     printf(\textcolor{stringliteral}{"{}Menu\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01035}01035     printf(\textcolor{stringliteral}{"{}1. Seleziona tetramino\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01036}01036     printf(\textcolor{stringliteral}{"{}2. Pezzi disponibili\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01037}01037     printf(\textcolor{stringliteral}{"{}3. Exit\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01038}01038 }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01039}01039     printf(\textcolor{stringliteral}{"{}Scelta: "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01040}01040     scanf(\textcolor{stringliteral}{"{} \%d"{}}, \&select);}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01041}01041         \textcolor{keywordflow}{while} (getchar() != \textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{comment}{/*salta alla fine della riga*/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01042}01042           ;}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01043}01043     printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01044}01044     }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01045}01045       \textcolor{keywordflow}{switch} (select)}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01046}01046       \{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01047}01047         \textcolor{keywordflow}{case} 1: \textcolor{keywordflow}{if} (turno == 1)\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01048}01048                   \mbox{\hyperlink{tetrix_8c_a6e65a46c4e3bacc4754e0fe0af59ede6}{seleziona\_tetramino}}(campo\_giocatore\_1, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, turno);}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01049}01049                   punteggio\_1 = punteggio\_1 + \mbox{\hyperlink{tetrix_8c_a682f38efcb81ebea210a63c2d1dc6aca}{calcola\_punti}}(campo\_giocatore\_1,\mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01050}01050                   turno = 2;}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01051}01051                   \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01052}01052                   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(turno == 2)\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01053}01053                     \mbox{\hyperlink{tetrix_8c_a6e65a46c4e3bacc4754e0fe0af59ede6}{seleziona\_tetramino}}(campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, turno);}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01054}01054                     punteggio\_2 = punteggio\_2 + \mbox{\hyperlink{tetrix_8c_a682f38efcb81ebea210a63c2d1dc6aca}{calcola\_punti}}(campo\_giocatore\_2,\mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01055}01055                     turno = 1;}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01056}01056                     \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01057}01057               \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01058}01058         \textcolor{keywordflow}{case} 2: \mbox{\hyperlink{tetrix_8c_aa3bc71145727910fda60fad153a740bd}{Visualizza\_pezzi\_disponibili}}();}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01059}01059               \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01060}01060         \textcolor{keywordflow}{case} 3: printf(\textcolor{stringliteral}{"{}Arrivederci\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01061}01061               fine\_gioco = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}}; }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01062}01062               \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01063}01063 }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01064}01064         \textcolor{keywordflow}{default}: printf(\textcolor{stringliteral}{"{}!!! ATTENZIONE !!!:\(\backslash\)tScelta sbagliata. Salti il turno!.\(\backslash\)n"{}}); \textcolor{comment}{/*Cambio turno per scelta sbagliata*/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01065}01065                  \textcolor{keywordflow}{if}(turno == 1)}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01066}01066                    turno = 2;}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01067}01067                    \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01068}01068                      turno = 1;}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01069}01069               \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01070}01070       \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01072}01072       \textcolor{keywordflow}{if}(punteggio\_1 >= 50)\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01073}01073          vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01074}01074          printf(\textcolor{stringliteral}{"{}Complimenti Giocatore 1 hai raggiunto 50 punti, HAI VINTO! arrivederci!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01075}01075          \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01076}01076          \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(punteggio\_2 >= 50)\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01077}01077             vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01078}01078             printf(\textcolor{stringliteral}{"{}Complimenti Giocatore 2 hai raggiunto 50 punti, HAI VINTO! arrivederci!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01079}01079          \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01080}01080       }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01081}01081 \textcolor{comment}{/*Perdita per uscita dal campo*/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01082}01082       \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}{Perdita\_uscita\_campo}} != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}} \&\& turno == 2)\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01083}01083          vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01084}01084          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01085}01085          printf(\textcolor{stringliteral}{"{}Complimenti Giocatore 2 il Giocatore 1 è uscito dal campo, HAI VINTO! arrivederci!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01086}01086          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01087}01087          \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01088}01088       \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}{Perdita\_uscita\_campo}} != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}} \&\& turno == 1)\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01089}01089          vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01090}01090          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01091}01091          printf(\textcolor{stringliteral}{"{}Complimenti Giocatore 1 il Giocatore 2 è uscito dal campo, HAI VINTO! arrivederci!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01092}01092          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01093}01093          \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01094}01094 \textcolor{comment}{/*la variabile inverti\_campo diventa TRUE nella funzione calcola punti e quindi chiamo funzione inverti campo da gioco*/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01095}01095       \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a051ce5d94ece76dfba76cd03264c2486}{inverti\_campo}} != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}} \&\& turno == 1)\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01096}01096          \mbox{\hyperlink{tetrix_8c_a051ce5d94ece76dfba76cd03264c2486}{inverti\_campo}} = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00924}00924   \mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\_t}} fine\_gioco = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00925}00925   \textcolor{keywordtype}{int} select = 0; }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00926}00926   \textcolor{keywordtype}{int} turno = 1;}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00927}00927   \mbox{\hyperlink{tetrix_8c_a727a6f710e0f7bcf136b908b5cff365d}{giocatori\_t}} \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} = \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faa616ede6b6f3a1d38a724d1168ddf1adf}{NOT\_SELECTED}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00928}00928 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00934}00934   \textcolor{keywordtype}{int}   punteggio\_1 = 0;}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00935}00935   \textcolor{keywordtype}{int}   punteggio\_2 = 0;}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00936}00936   \mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\_t}} vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00937}00937 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00942}00942     \mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\_di\_gioco}} campo\_giocatore\_1 = (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\_di\_gioco}}) malloc(\mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}*\mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{tetrix_8c_aa7f1ff8f4ac9b5f9dc398111841d9d77}{riquadro\_t}}));}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00943}00943     \mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\_di\_gioco}} campo\_giocatore\_2 = (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\_di\_gioco}}) malloc(\mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}*\mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{tetrix_8c_aa7f1ff8f4ac9b5f9dc398111841d9d77}{riquadro\_t}}));}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00944}00944     }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00949}00949   \mbox{\hyperlink{tetrix_8c_a5888954e236254cc7e6ff5cffedbf90f}{init}}(campo\_giocatore\_1, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00950}00950   \mbox{\hyperlink{tetrix_8c_a5888954e236254cc7e6ff5cffedbf90f}{init}}(campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00951}00951  }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00952}00952   }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00954}00954   printf(\textcolor{stringliteral}{"{}\(\backslash\)n                                 BENVENUTI IN\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00955}00955   printf(\textcolor{stringliteral}{"{} /////////////////// XXXXX  XXXXX  XXXXX  XXXX    X       X   X  ///////////////////\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00956}00956   printf(\textcolor{stringliteral}{"{} ///////////////////   X    X        X    X   X   X        X X   ///////////////////\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00957}00957   printf(\textcolor{stringliteral}{"{} ///////////////////   X    XXXX     X    XXXX    X  XX   X    ///////////////////\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00958}00958   printf(\textcolor{stringliteral}{"{} ///////////////////   X    X        X    X  X    X        X X   ///////////////////\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00959}00959   printf(\textcolor{stringliteral}{"{} ///////////////////   X    XXXXX    X    X   X   X   X   X  ///////////////////\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00960}00960   printf(\textcolor{stringliteral}{"{}ISTRUZIONI:\(\backslash\)n -\/ X-\/Tetris e' una versione avanzata del gioco originale del Tetris.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00961}00961   printf(\textcolor{stringliteral}{"{} -\/ Il campo di gioco e\(\backslash\)' largo 10 e alto 15 posizioni.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00962}00962   printf(\textcolor{stringliteral}{"{} -\/ La rimozione di una riga vale 1 punto, la rimozione di due righe con un solo pezzo vale 3 punti,\(\backslash\)n tre righe 6 punti, quattro righe 12 punti..\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00963}00963   printf(\textcolor{stringliteral}{"{}Per iniziare a giocare premi INVIO.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00964}00964   getchar();}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00965}00965   printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00966}00966 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00967}00967 \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00968}00968 \{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00969}00969   \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} != \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faaf64ffcc804f85cc65366369011db5768}{MULTI\_PLAYER}} \&\& \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} != \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faae0c9d3e5c71ae4b23a63b36eaac2f918}{SINGLE\_PLAYER}})\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00970}00970     printf(\textcolor{stringliteral}{"{}Ciao :), In quanti giocate?\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00971}00971     printf(\textcolor{stringliteral}{"{}1. Single Player -\/ Un solo giocatore\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00972}00972     printf(\textcolor{stringliteral}{"{}2. Multiplayer -\/ due giocatori\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00973}00973     printf(\textcolor{stringliteral}{"{}Scelta: "{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00974}00974     scanf(\textcolor{stringliteral}{"{} \%d"{}}, \&\mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00975}00975       \textcolor{keywordflow}{while} (getchar() != \textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{comment}{/*salta alla fine della riga*/}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00976}00976         ;}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00977}00977     printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00978}00978     \textcolor{keywordflow}{switch} (\mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}})}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00979}00979       \{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00980}00980         \textcolor{keywordflow}{case} 1: printf(\textcolor{stringliteral}{"{}Giochi da solo, bene!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00981}00981               \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00982}00982         \textcolor{keywordflow}{case} 2: printf(\textcolor{stringliteral}{"{}Giochi in compagnia, bene!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00983}00983                 \mbox{\hyperlink{tetrix_8c_adf818de7cbdc4a4cf738bfbfe3be289c}{TEST\_INVERTI}}(campo\_giocatore\_1, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00984}00984                 \mbox{\hyperlink{tetrix_8c_a3db906a4d562c2e7b2e92b92849943ca}{raddoppia\_tetramini}}(); \textcolor{comment}{/*Raddopia il numero di tetramini per il multiplayer*/}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00985}00985               \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00986}00986         \textcolor{keywordflow}{default}: printf(\textcolor{stringliteral}{"{}!!! ATTENZIONE !!!:\(\backslash\)tScelta sbagliata. Selezionane un altra.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00987}00987               }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00988}00988       \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00989}00989     \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00990}00990 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00991}00991 \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} == \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faae0c9d3e5c71ae4b23a63b36eaac2f918}{SINGLE\_PLAYER}})}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00992}00992   \{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00993}00993     punteggio\_1 = punteggio\_1 + \mbox{\hyperlink{tetrix_8c_a682f38efcb81ebea210a63c2d1dc6aca}{calcola\_punti}}(campo\_giocatore\_1,\mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00994}00994     \mbox{\hyperlink{tetrix_8c_adc63289992b5330a17a91eb5e8924fd0}{stampa}}(campo\_giocatore\_1,campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faae0c9d3e5c71ae4b23a63b36eaac2f918}{SINGLE\_PLAYER}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00995}00995     printf(\textcolor{stringliteral}{"{}Turno del giocatore 1.\(\backslash\)nPunteggio: \%d.\(\backslash\)n\(\backslash\)n"{}}, punteggio\_1);}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00996}00996 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00997}00997     printf(\textcolor{stringliteral}{"{}Menu\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00998}00998     printf(\textcolor{stringliteral}{"{}1. Seleziona tetramino\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l00999}00999     printf(\textcolor{stringliteral}{"{}2. Pezzi disponibili\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01000}01000     printf(\textcolor{stringliteral}{"{}3. Exit\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01001}01001     }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01002}01002     printf(\textcolor{stringliteral}{"{}Scelta: "{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01003}01003     scanf(\textcolor{stringliteral}{"{} \%d"{}}, \&select);}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01004}01004         \textcolor{keywordflow}{while} (getchar() != \textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{comment}{/*salta alla fine della riga*/}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01005}01005           ;}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01006}01006     printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01007}01007     }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01008}01008       \textcolor{keywordflow}{switch} (select)}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01009}01009       \{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01010}01010         \textcolor{keywordflow}{case} 1: \mbox{\hyperlink{tetrix_8c_a6e65a46c4e3bacc4754e0fe0af59ede6}{seleziona\_tetramino}}(campo\_giocatore\_1, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, 1);}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01011}01011               \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01012}01012         \textcolor{keywordflow}{case} 2: \textcolor{comment}{/*altra operazione*/}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01013}01013               \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01014}01014         \textcolor{keywordflow}{case} 3: printf(\textcolor{stringliteral}{"{}Arrivederci\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01015}01015               fine\_gioco = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}}; }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01016}01016               \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01017}01017         \textcolor{keywordflow}{default}: printf(\textcolor{stringliteral}{"{}!!! ATTENZIONE !!!:\(\backslash\)tScelta sbagliata. Selezionane un altra.\(\backslash\)n"{}}); \textcolor{comment}{/*Cambio turno in modo da continuare il ciclo sul giocatore attuale*/}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01018}01018               }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01019}01019       \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01020}01020     \textcolor{keywordflow}{if}(punteggio\_1 >= 50)\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01021}01021        vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01022}01022        printf(\textcolor{stringliteral}{"{}Complimenti hai raggiunto 50 punti, arrivederci!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01023}01023     \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01024}01024     \textcolor{comment}{/*Perdita per uscita dal campo*/}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01025}01025     \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}{Perdita\_uscita\_campo}} != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}})\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01026}01026       vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01027}01027       printf(\textcolor{stringliteral}{"{}HAI PERSO! Sei uscito dal campo arrivederci!\(\backslash\)n"{}}); }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01028}01028       \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01029}01029     }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01030}01030     \textcolor{keywordflow}{if}(vittoria != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}})}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01031}01031       fine\_gioco = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01032}01032   \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01033}01033 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01034}01034 \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} == \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faaf64ffcc804f85cc65366369011db5768}{MULTI\_PLAYER}})   }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01035}01035 \{ }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01036}01036     \textcolor{keywordflow}{if}(turno == 1)}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01037}01037     \{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01038}01038       \mbox{\hyperlink{tetrix_8c_adc63289992b5330a17a91eb5e8924fd0}{stampa}}(campo\_giocatore\_1,campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faaf64ffcc804f85cc65366369011db5768}{MULTI\_PLAYER}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01039}01039       printf(\textcolor{stringliteral}{"{}Turno del giocatore 1.\(\backslash\)nPunteggio: \%d.\(\backslash\)n\(\backslash\)n"{}}, punteggio\_1);}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01040}01040     \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01041}01041       \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01042}01042         \mbox{\hyperlink{tetrix_8c_adc63289992b5330a17a91eb5e8924fd0}{stampa}}(campo\_giocatore\_1,campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faaf64ffcc804f85cc65366369011db5768}{MULTI\_PLAYER}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01043}01043         printf(\textcolor{stringliteral}{"{}Turno del giocatore 2.\(\backslash\)nPunteggio: \%d.\(\backslash\)n\(\backslash\)n"{}}, punteggio\_2);}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01044}01044         \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01045}01045     printf(\textcolor{stringliteral}{"{}Menu\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01046}01046     printf(\textcolor{stringliteral}{"{}1. Seleziona tetramino\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01047}01047     printf(\textcolor{stringliteral}{"{}2. Pezzi disponibili\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01048}01048     printf(\textcolor{stringliteral}{"{}3. Exit\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01049}01049 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01050}01050     printf(\textcolor{stringliteral}{"{}Scelta: "{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01051}01051     scanf(\textcolor{stringliteral}{"{} \%d"{}}, \&select);}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01052}01052         \textcolor{keywordflow}{while} (getchar() != \textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{comment}{/*salta alla fine della riga*/}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01053}01053           ;}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01054}01054     printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01055}01055     }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01056}01056       \textcolor{keywordflow}{switch} (select)}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01057}01057       \{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01058}01058         \textcolor{keywordflow}{case} 1: \textcolor{keywordflow}{if} (turno == 1)\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01059}01059                   \mbox{\hyperlink{tetrix_8c_a6e65a46c4e3bacc4754e0fe0af59ede6}{seleziona\_tetramino}}(campo\_giocatore\_1, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, turno);}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01060}01060                   punteggio\_1 = punteggio\_1 + \mbox{\hyperlink{tetrix_8c_a682f38efcb81ebea210a63c2d1dc6aca}{calcola\_punti}}(campo\_giocatore\_1,\mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01061}01061                   turno = 2;}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01062}01062                   \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01063}01063                   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(turno == 2)\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01064}01064                     \mbox{\hyperlink{tetrix_8c_a6e65a46c4e3bacc4754e0fe0af59ede6}{seleziona\_tetramino}}(campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, turno);}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01065}01065                     punteggio\_2 = punteggio\_2 + \mbox{\hyperlink{tetrix_8c_a682f38efcb81ebea210a63c2d1dc6aca}{calcola\_punti}}(campo\_giocatore\_2,\mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01066}01066                     turno = 1;}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01067}01067                     \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01068}01068               \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01069}01069         \textcolor{keywordflow}{case} 2: \mbox{\hyperlink{tetrix_8c_aa3bc71145727910fda60fad153a740bd}{Visualizza\_pezzi\_disponibili}}();}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01070}01070               \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01071}01071         \textcolor{keywordflow}{case} 3: printf(\textcolor{stringliteral}{"{}Arrivederci\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01072}01072               fine\_gioco = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}}; }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01073}01073               \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01074}01074 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01075}01075         \textcolor{keywordflow}{default}: printf(\textcolor{stringliteral}{"{}!!! ATTENZIONE !!!:\(\backslash\)tScelta sbagliata. Salti il turno!.\(\backslash\)n"{}}); \textcolor{comment}{/*Cambio turno per scelta sbagliata*/}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01076}01076                  \textcolor{keywordflow}{if}(turno == 1)}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01077}01077                    turno = 2;}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01078}01078                    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01079}01079                      turno = 1;}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01080}01080               \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01081}01081       \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01083}01083       \textcolor{keywordflow}{if}(punteggio\_1 >= 50)\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01084}01084          vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01085}01085          printf(\textcolor{stringliteral}{"{}Complimenti Giocatore 1 hai raggiunto 50 punti, HAI VINTO! arrivederci!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01086}01086          \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01087}01087          \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(punteggio\_2 >= 50)\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01088}01088             vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01089}01089             printf(\textcolor{stringliteral}{"{}Complimenti Giocatore 2 hai raggiunto 50 punti, HAI VINTO! arrivederci!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01090}01090          \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01091}01091       }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01092}01092 \textcolor{comment}{/*Perdita per uscita dal campo*/}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01093}01093       \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}{Perdita\_uscita\_campo}} != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}} \&\& turno == 2)\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01094}01094          vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01095}01095          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01096}01096          printf(\textcolor{stringliteral}{"{}Complimenti Giocatore 2 il Giocatore 1 è uscito dal campo, HAI VINTO! arrivederci!\(\backslash\)n"{}});}
 \DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01097}01097          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01098}01098          printf(\textcolor{stringliteral}{"{}Il Giocatore 2 ha cancellato 3 o più righe, Campo giocatore 2 sarà invertito!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01099}01099          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01100}01100          \mbox{\hyperlink{tetrix_8c_aa11dce9cbdbceb69cc11f68db2609547}{inverti\_campo\_di\_gioco}}(campo\_giocatore\_1, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01101}01101          \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01102}01102       \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a051ce5d94ece76dfba76cd03264c2486}{inverti\_campo}} != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}} \&\& turno == 2)\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01103}01103          \mbox{\hyperlink{tetrix_8c_a051ce5d94ece76dfba76cd03264c2486}{inverti\_campo}} = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01104}01104          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01105}01105          printf(\textcolor{stringliteral}{"{}Il Giocatore 1 ha cancellato 3 o più righe, Campo giocatore 2 sarà invertito!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01106}01106          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01107}01107          \mbox{\hyperlink{tetrix_8c_aa11dce9cbdbceb69cc11f68db2609547}{inverti\_campo\_di\_gioco}}(campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01108}01108          \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01109}01109 }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01110}01110     \textcolor{comment}{/*Perdita per fine dei tetramini*/}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01111}01111       \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_ad6fc8f02b9b9dd16cbb053cb94d9d75d}{I\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_abddddcaa391b55ca521a2dd642ecd67c}{J\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_a62a7aff152eb2b680f14719a0946b0cd}{L\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_a6bc5b256b323182ec7dde63f1e11f7f7}{O\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_aa8602cf3d17bdad9ea477d87502198f1}{S\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_afa13dff6dc6c64568b7d13a46631815e}{T\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_a260e6987b9e21f6b802bee83d8b5db7e}{Z\_free}} <= 0)\{}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01112}01112         printf(\textcolor{stringliteral}{"{}I tetramini sono finiti!, vince il giocatore con il punteggio più alto : "{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01113}01113         \textcolor{keywordflow}{if}(punteggio\_1 > punteggio\_2)}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01114}01114           printf(\textcolor{stringliteral}{"{}GIOCATORE 1, Complimenti\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01115}01115           \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(punteggio\_2 < punteggio\_1)}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01116}01116             printf(\textcolor{stringliteral}{"{}GIOCATORE 2, Complimenti\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01117}01117             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01118}01118               printf(\textcolor{stringliteral}{"{}PAREGGIO, Complimenti a tutti e due\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01119}01119         vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01120}01120       \}}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01121}01121 }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01122}01122       \textcolor{keywordflow}{if}(vittoria != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}})}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01123}01123          fine\_gioco = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01124}01124       }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01125}01125 \}  }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01126}01126 }
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01127}01127 \} \textcolor{keywordflow}{while} (!fine\_gioco);}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01128}01128   \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01129}01129 \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01098}01098          \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01099}01099       \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}{Perdita\_uscita\_campo}} != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}} \&\& turno == 1)\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01100}01100          vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01101}01101          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01102}01102          printf(\textcolor{stringliteral}{"{}Complimenti Giocatore 1 il Giocatore 2 è uscito dal campo, HAI VINTO! arrivederci!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01103}01103          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01104}01104          \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01105}01105 \textcolor{comment}{/*la variabile inverti\_campo diventa TRUE nella funzione calcola punti e quindi chiamo funzione inverti campo da gioco*/}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01106}01106       \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a051ce5d94ece76dfba76cd03264c2486}{inverti\_campo}} != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}} \&\& turno == 1)\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01107}01107          \mbox{\hyperlink{tetrix_8c_a051ce5d94ece76dfba76cd03264c2486}{inverti\_campo}} = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01108}01108          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01109}01109          printf(\textcolor{stringliteral}{"{}Il Giocatore 2 ha cancellato 3 o più righe, Campo giocatore 2 sarà invertito!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01110}01110          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01111}01111          \mbox{\hyperlink{tetrix_8c_aa11dce9cbdbceb69cc11f68db2609547}{inverti\_campo\_di\_gioco}}(campo\_giocatore\_1, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01112}01112          \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01113}01113       \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_a051ce5d94ece76dfba76cd03264c2486}{inverti\_campo}} != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}} \&\& turno == 2)\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01114}01114          \mbox{\hyperlink{tetrix_8c_a051ce5d94ece76dfba76cd03264c2486}{inverti\_campo}} = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01115}01115          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01116}01116          printf(\textcolor{stringliteral}{"{}Il Giocatore 1 ha cancellato 3 o più righe, Campo giocatore 2 sarà invertito!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01117}01117          printf(\textcolor{stringliteral}{"{}\%40s\%2s\%40s\(\backslash\)n"{}},\textcolor{stringliteral}{"{} "{}},\textcolor{stringliteral}{"{}**"{}},\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01118}01118          \mbox{\hyperlink{tetrix_8c_aa11dce9cbdbceb69cc11f68db2609547}{inverti\_campo\_di\_gioco}}(campo\_giocatore\_2, \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01119}01119          \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01120}01120 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01121}01121     \textcolor{comment}{/*Perdita per fine dei tetramini*/}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01122}01122       \textcolor{keywordflow}{if}(\mbox{\hyperlink{tetrix_8c_ad6fc8f02b9b9dd16cbb053cb94d9d75d}{I\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_abddddcaa391b55ca521a2dd642ecd67c}{J\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_a62a7aff152eb2b680f14719a0946b0cd}{L\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_a6bc5b256b323182ec7dde63f1e11f7f7}{O\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_aa8602cf3d17bdad9ea477d87502198f1}{S\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_afa13dff6dc6c64568b7d13a46631815e}{T\_free}} <= 0 \&\& \mbox{\hyperlink{tetrix_8c_a260e6987b9e21f6b802bee83d8b5db7e}{Z\_free}} <= 0)\{}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01123}01123         printf(\textcolor{stringliteral}{"{}I tetramini sono finiti!, vince il giocatore con il punteggio più alto : "{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01124}01124         \textcolor{keywordflow}{if}(punteggio\_1 > punteggio\_2)}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01125}01125           printf(\textcolor{stringliteral}{"{}GIOCATORE 1, Complimenti\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01126}01126           \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(punteggio\_2 < punteggio\_1)}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01127}01127             printf(\textcolor{stringliteral}{"{}GIOCATORE 2, Complimenti\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01128}01128             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01129}01129               printf(\textcolor{stringliteral}{"{}PAREGGIO, Complimenti a tutti e due\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01130}01130         vittoria = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01131}01131       \}}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01132}01132 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01133}01133       \textcolor{keywordflow}{if}(vittoria != \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}})}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01134}01134          fine\_gioco = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01135}01135       }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01136}01136 \}  }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01137}01137 }
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01138}01138 \} \textcolor{keywordflow}{while} (!fine\_gioco);}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01139}01139   \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{tetrix_8c_source_l01140}01140 \}}
 
 \end{DoxyCode}

@@ -551,19 +551,38 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >main: chiede all'utente di immettere un codice, poi <br  />
+ chiama una funzione per eseguire l'azione <br  />
+ richiesta. Continua fino a quando la variabile <br  />
+ fine_gioco non diventa positiva. stampa messaggio <br  />
+ di errore quando il codice e' sbagliato. <br  />
+ </p>
 <p >Variabili per utilizzo del menu: </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fine_gioco</td><td>indica quando il main chiudo il ciclo e finisce il gioco </td></tr>
     <tr><td class="paramname">select</td><td>indica che voce del menu ho selezionato </td></tr>
-    <tr><td class="paramname">turno</td><td>indica il turno del giocatore attuale</td></tr>
+    <tr><td class="paramname">turno</td><td>indica il turno del giocatore attuale </td></tr>
+    <tr><td class="paramname">giocatori</td><td>indica la modalità di gioco multi o single player</td></tr>
   </table>
   </dd>
 </dl>
-<p>creo i punteggi</p>
-<p >Variabile per il numero di giocatori</p>
-<p >creo i campi da gioco del giocatore 1 e 2</p>
-<p >inizializzare i campi da gioco</p>
-<p >messaggio di benvenuto</p>
+<p>Variabili per il punteggio dei giocatori: </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">punteggio_1</td><td>indica il punteggio del giocatore 1 </td></tr>
+    <tr><td class="paramname">punteggio_2</td><td>indica il punteggio del giocatore 2 </td></tr>
+    <tr><td class="paramname">vittoria</td><td>indica che uno dei due giocatori ha vinto</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>creo i campi da gioco del giocatore 1 e 2 </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">campo_giocatore_1</td><td>puntatore al campo del giocatore 1 </td></tr>
+    <tr><td class="paramname">campo_giocatore_2</td><td>puntatore al campo del giocatore 2</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>inizializzare i campi da gioco </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="tetrix_8c.html#a5888954e236254cc7e6ff5cffedbf90f" title="Inizializzatore: inizializza il campo da gioco a VUOTO.">init(campo_di_gioco piano, int riga, int colonna)</a></dd></dl>
+<p>messaggio di benvenuto</p>
 <p >Vittoria dopo i 50 punti</p>
 
 <p class="definition">Definition at line <a class="el" href="tetrix_8c_source.html#l00916">916</a> of file <a class="el" href="tetrix_8c_source.html">tetrix.c</a>.</p>

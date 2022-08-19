@@ -324,23 +324,41 @@ Definition at line \mbox{\hyperlink{tetrix_8c_source_l00884}{884}} of file \mbox
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Variabili per utilizzo del menu\+: 
+main\+: chiede all\textquotesingle{}utente di immettere un codice, poi ~\newline
+ chiama una funzione per eseguire l\textquotesingle{}azione ~\newline
+ richiesta. Continua fino a quando la variabile ~\newline
+ fine\+\_\+gioco non diventa positiva. stampa messaggio ~\newline
+ di errore quando il codice e\textquotesingle{} sbagliato. ~\newline
+ Variabili per utilizzo del menu\+: 
 \begin{DoxyParams}{Parameters}
 {\em fine\+\_\+gioco} & indica quando il main chiudo il ciclo e finisce il gioco \\
 \hline
 {\em select} & indica che voce del menu ho selezionato \\
 \hline
-{\em turno} & indica il turno del giocatore attuale\\
+{\em turno} & indica il turno del giocatore attuale \\
+\hline
+{\em giocatori} & indica la modalità di gioco multi o single player\\
 \hline
 \end{DoxyParams}
-creo i punteggi
-
-Variabile per il numero di giocatori
-
-creo i campi da gioco del giocatore 1 e 2
-
-inizializzare i campi da gioco
-
+Variabili per il punteggio dei giocatori\+: 
+\begin{DoxyParams}{Parameters}
+{\em punteggio\+\_\+1} & indica il punteggio del giocatore 1 \\
+\hline
+{\em punteggio\+\_\+2} & indica il punteggio del giocatore 2 \\
+\hline
+{\em vittoria} & indica che uno dei due giocatori ha vinto\\
+\hline
+\end{DoxyParams}
+creo i campi da gioco del giocatore 1 e 2 
+\begin{DoxyParams}{Parameters}
+{\em campo\+\_\+giocatore\+\_\+1} & puntatore al campo del giocatore 1 \\
+\hline
+{\em campo\+\_\+giocatore\+\_\+2} & puntatore al campo del giocatore 2\\
+\hline
+\end{DoxyParams}
+inizializzare i campi da gioco \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{tetrix_8c_a5888954e236254cc7e6ff5cffedbf90f}{init(campo\+\_\+di\+\_\+gioco piano, int riga, int colonna)}}
+\end{DoxySeeAlso}
 messaggio di benvenuto
 
 Vittoria dopo i 50 punti
