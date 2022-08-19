@@ -14,6 +14,8 @@
  * @def column è il numero di colonne
  * @def size è la grandezza del vettore tetramino
  */
+
+/** @def row è il numero di righe*/
 #define row 15
 #define column 10
 #define size 4 
