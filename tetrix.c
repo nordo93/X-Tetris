@@ -104,16 +104,16 @@ typedef enum bool_e
     TRUE = 1
 } bool_t;
 
-/*Definisco delle costanti per il numero di righe e colonne*/
+/** @brief Definisco delle costanti per il numero di righe e colonne*/
 const int RIGHE = row;
 const int COLONNE = column;
 
-/**
- * @brief Definisco variabili globali per l'errore di uscire dalle righe colonne
- * 
- */
+/** @brief Definisco variabili globali per l'errore di uscire dalle righe colonne*/
+
 bool_t Perdita_uscita_campo = FALSE;
-/*Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer*/
+
+/** @brief Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer */
+
 bool_t inverti_campo = FALSE;
 
 /**
