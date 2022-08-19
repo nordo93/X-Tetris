@@ -915,7 +915,11 @@ void TEST_INVERTI(campo_di_gioco campo_giocatore, int RIGHE, int COLONNE){
 
 int main()
 {
-/**Variabili per utilizzo del menu*/
+/** Variabili per utilizzo del menu: 
+* @param fine_gioco indica quando il main chiudo il ciclo e finisce il gioco
+* @param select indica che voce del menu ho selezionato
+* @param turno indica il turno del giocatore attuale
+*/
 	bool_t fine_gioco = FALSE;
 	int select = 0; 
 	int turno = 1;
