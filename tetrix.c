@@ -905,13 +905,13 @@ void TEST_INVERTI(campo_di_gioco campo_giocatore, int RIGHE, int COLONNE){
 	}
 }
 
-/*****************************************************************
-* main:	chiede all'utente di immettere un codice, poi           *
-*	chiama una funzione per eseguire l'azione                   *
-*   richiesta. Continua fino a quando la variabile              *
-*   fine_gioco non diventa positiva. stampa messaggio           *
-*	di errore quando il codice e' sbagliato.                    *
-****************************************************************/
+/*****************************************************
+* main:	chiede all'utente di immettere un codice, poi           
+*	chiama una funzione per eseguire l'azione                   
+*   richiesta. Continua fino a quando la variabile              
+*   fine_gioco non diventa positiva. stampa messaggio           
+*	di errore quando il codice e' sbagliato.                    
+*****************************************************/
 
 int main()
 {
