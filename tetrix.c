@@ -2,7 +2,7 @@
  * @file tetrix.c
  * @author Alessandro Cecchin (859869@stud.unive.it)
  * @brief 
- * @version 1
+ * @version 0.9.1
  * @date 2022-08-19
  * 
  * @copyright Copyright (c) 2022
