@@ -209,9 +209,15 @@ int verifica_uscita(int *p, int riga, int colonna, int contatto){
     for(i=0; i < size; i++){
 
       if(*p != 0)
-        colonna++;  /*se il puntatore del tetramino non è zero allora vuol dire che occupera anche la prossima colonna*/    
-      if(colonna > COLONNE || colonna < 0) 
-        return -1;
+        colonna++;  /*se il puntatore del tetramino non è zero allora vuol dire che occupera anche la prossima colonna*/
+
+	  /**
+	   * @param Perdita_uscita_campo: quando è a TRUE indica l'uscita dal campo e il giocatore perde
+	   */
+      if(colonna > COLONNE || colonna < 0){
+	  Perdita_uscita_campo = TRUE;
+      return -1;
+	}
 
       if(*p == 2 || *p == 4 && sottrazione_riga == 0)
         sottrazione_riga = 1;
