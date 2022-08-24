@@ -144,7 +144,7 @@ void init(campo_di_gioco piano, int riga, int colonna) {
  * 
  * @param tetramino 
  */
-void stampa_anteprima(int * tetramino){
+void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
 	
 	printf("-ANTEPRIMA scelta 1-\n");
 
@@ -201,6 +201,9 @@ void stampa_anteprima(int * tetramino){
         /*vado a capo per creare la griglia*/
         printf("\n");
         }
+        for(i = colonna_scelta_dal_giocatore; i < colonna_scelta_dal_giocatore + size; i++)
+         printf(" %d ", i);
+        printf("\n");
 }
 
 int verifica_uscita(int *p, int riga, int colonna, int contatto){
@@ -286,13 +289,15 @@ int contatto (campo_di_gioco piano, int scelta_colonna, int *p){
     int riga = 0; /*tengo conto della riga a cui siamo arrvati*/
 	int contatto = (RIGHE*COLONNE) - (COLONNE- scelta_colonna) + size; /*aggiungo size perchè se presente un sigolo blocco occupato a fine corsa non lo vede*/
 	bool_t found = FALSE;
+	bool_t contatto_minore = FALSE; /*Questa variabile mi serve per il caso in cui il tetramino si appoggi ma il prossimo blocco invece no*/
     /*contatto è uguale all'ultimo numero della colonna, quindi se colonna 2 allora sara 142 il numero contatto*/
 	for (c = scelta_colonna; c < contatto; ){
 		for(i = 0; i < size ; i++){
-		  if(piano[c + i] == OCCUPATO && *p > 0){
+		  if(piano[c + i] == OCCUPATO && *p > 0 && contatto_minore == FALSE){
 		    printf("trovato contatto a : %d\n", c + i);
-        	  if(*p == 4 || *p == 6){
+        	  if(*p == 4 || *p == 6){ /*Verifico se sotto il tetramino c'è qualcosa su cui appoggiare*/
                 contatto = c;
+				
                 found = TRUE;
                 }
       	  	    else if (*p == 5 && piano[c + i - (COLONNE * 2)] == OCCUPATO ){ /* Inserisco anche la verifica che sotto il tetramino ci sia un pezzo,  
@@ -306,6 +311,7 @@ int contatto (campo_di_gioco piano, int scelta_colonna, int *p){
 					}
         	        else if (*p == 1 || *p == 2 || *p == 3){
                       contatto = c - COLONNE;
+					  contatto_minore = TRUE;
                       found = TRUE;
                       }   
 					  else
@@ -407,7 +413,7 @@ bool_t salva_tetramino (campo_di_gioco piano, int *p, int scelta_colonna){
 
 /*scelta rotazione*/
 
-int * rotazione(char code){
+int * rotazione(char code, int colonna_scelta_dal_giocatore){
   int *p;
   int chose = 0;
   bool_t is_ok = FALSE;
@@ -420,7 +426,7 @@ int * rotazione(char code){
       printf("2. ruotare di 90 gradi\n");
       printf("3. ruotare di 180 gradi\n");
 	  printf("4. ruotare di 270 gradi\n");
-	  stampa_anteprima(J_);
+	  stampa_anteprima(colonna_scelta_dal_giocatore,J_);
 	  printf("Scelta: ");
       scanf(" %d", &chose);
 		  while (getchar() != '\n') /*salta alla fine della riga*/
@@ -449,7 +455,7 @@ int * rotazione(char code){
     while( is_ok == FALSE ){
       printf("1. i orrizzontale\n");
 	  printf("2. i verticale\n");
-	  stampa_anteprima(I_);
+	  stampa_anteprima(colonna_scelta_dal_giocatore,I_);
 	  printf("Scelta: ");
       scanf(" %d", &chose);
 		  while (getchar() != '\n') /*salta alla fine della riga*/
@@ -479,7 +485,7 @@ int * rotazione(char code){
           printf("2. ruotare di 90 gradi\n");
           printf("3. ruotare di 180 gradi\n");
 	      printf("4. ruotare di 270 gradi\n");
-		  stampa_anteprima(L_);
+		  stampa_anteprima(colonna_scelta_dal_giocatore,L_);
           printf("Scelta: ");
           scanf(" %d", &chose);
 		    while (getchar() != '\n') /*salta alla fine della riga*/
@@ -508,7 +514,7 @@ int * rotazione(char code){
         while( is_ok == FALSE ){
           printf("1. i orrizzontale\n");
 	      printf("2. i verticale\n");
-		  stampa_anteprima(S_);
+		  stampa_anteprima(colonna_scelta_dal_giocatore,S_);
 	      printf("Scelta: ");
           scanf(" %d", &chose);
 		    while (getchar() != '\n') /*salta alla fine della riga*/
@@ -531,7 +537,7 @@ int * rotazione(char code){
         while( is_ok == FALSE ){;
           printf("1. i orrizzontale\n");
 	      printf("2. i verticale\n");
-		  stampa_anteprima(Z_);
+		  stampa_anteprima(colonna_scelta_dal_giocatore,Z_);
 	      printf("Scelta: ");
           scanf(" %d", &chose);
 		    while (getchar() != '\n') /*salta alla fine della riga*/
@@ -556,7 +562,7 @@ int * rotazione(char code){
           printf("2. ruotare di 90 gradi\n");
           printf("3. ruotare di 180 gradi\n");
 	      printf("4. ruotare di 270 gradi\n");
-		  stampa_anteprima(T_);
+		  stampa_anteprima(colonna_scelta_dal_giocatore,T_);
           printf("Scelta: ");
           scanf(" %d", &chose);
 		    while (getchar() != '\n') /*salta alla fine della riga*/
@@ -601,7 +607,7 @@ void Visualizza_pezzi_disponibili(){
 
 }
 
-int * scelta (){
+int * scelta (int colonna_scelta_dal_giocatore){
 	char code;
 	int *p;
 
@@ -623,7 +629,7 @@ int * scelta (){
 						break;
 					  }
 					  I_free--;
-			          p = rotazione(code);
+			          p = rotazione(code, colonna_scelta_dal_giocatore);
 					  is_ok = TRUE;
 					  break;
 			case 'j': if(J_free <= 0){
@@ -632,7 +638,7 @@ int * scelta (){
 						break;
 					  }
 					  J_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
 					  is_ok = TRUE;
 			          break;
 			case 'l': if(L_free <= 0){
@@ -641,7 +647,7 @@ int * scelta (){
 						break;
 					  }
 					  L_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
                       is_ok = TRUE;
 			          break;
             case 'o': if(O_free <= 0){
@@ -650,7 +656,7 @@ int * scelta (){
 						break;
 					  }
 					  O_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
                       is_ok = TRUE;
 			          break;
             case 's': if(S_free <= 0){
@@ -659,7 +665,7 @@ int * scelta (){
 						break;
 					  }
 					  S_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
                       is_ok = TRUE;
 			          break;
             case 't': if(T_free <= 0){
@@ -668,7 +674,7 @@ int * scelta (){
 						break;
 					  }
 					  T_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
                       is_ok = TRUE;
 			          break;
             case 'z': if(Z_free <= 0){
@@ -677,7 +683,7 @@ int * scelta (){
 						break;
 					  }
 					  Z_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
                       is_ok = TRUE;
 			          break;
 			default: printf("!!! ATTENZIONE !!!:\tScelta sbagliata. Selezionane un altra.\n");
@@ -719,7 +725,7 @@ void seleziona_tetramino(campo_di_gioco piano, int RIGHE, int COLONNE, int turno
 	    int *p;
         int i;
         
-	    p = scelta();
+	    p = scelta(scelta_colonna);
         
 		if(turno == 1)
 	      is_ok = salva_tetramino(piano, p, scelta_colonna);
@@ -794,22 +800,6 @@ int calcola_punti(campo_di_gioco piano, int RIGHE, int COLONNE) {
 			else
               return 0;
 }
-
-
-
-/*Funzione che uso a scopo di test per visualizzare il numero di caselle nella griglia di gioco*/
-void test(campo_di_gioco piano, int RIGHE, int COLONNE){
-	printf("\n\n---TEST----\n\n");
-	int r, c, count = 0;
-    for (r=0; r<RIGHE; r++) {
-        for (c=0; c<COLONNE; c++) {
-            printf("%4d", count);
-            count++;
-        }
-        printf("\n"); 
-    }
-}
-
 
 /****************************************************************
 * stampa:	stampa il campo di gioco           				    *
@@ -915,6 +905,27 @@ void TEST_INVERTI(campo_di_gioco campo_giocatore, int RIGHE, int COLONNE){
 	}
 }
 
+
+/**
+ * @brief funzione che uso a scopo di test
+ * 
+ * @param piano 
+ * @param RIGHE 
+ * @param COLONNE 
+ * @return void 
+ */
+void test(campo_di_gioco piano, int RIGHE, int COLONNE){
+	printf("\n\n---TEST----\n\n");
+	int r, c, count = 0;
+    for (r=0; r<RIGHE; r++) {
+        for (c=0; c<COLONNE; c++) {
+            printf("%4d", count);
+            count++;
+        }
+        printf("\n"); 
+    }
+}
+
 /*************************************************//**
 * main:	chiede all'utente di immettere un codice, poi           
 *	chiama una funzione per eseguire l'azione                   
@@ -973,7 +984,7 @@ int main()
   printf("Per iniziare a giocare premi INVIO.\n");
   getchar();
   printf("\n\n");
-
+  test(campo_giocatore_1,RIGHE,COLONNE);
 do
 {
   if(giocatori != MULTI_PLAYER && giocatori != SINGLE_PLAYER){
