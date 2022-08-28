@@ -90,7 +90,7 @@ int Z_90[size]={2,6,0,0};
 
 
 
-/*Definisco una variabile per il numero di giocatori*/
+/** @enum Definisco una variabile per il numero di giocatori*/
 typedef enum giocatori
 {
     SINGLE_PLAYER = 1,
@@ -98,15 +98,14 @@ typedef enum giocatori
     NOT_SELECTED = -99
 } giocatori_t;
 
-/* riquadro del piano di gioco */
+/** @enum riquadro del piano di gioco che può essere occupato o meno.*/
 typedef enum riquadro
 { 
     VUOTO,
     OCCUPATO
 } riquadro_t;
 
-/* Piano di gioco */
-/* nota: campo_di_gioco e' un puntatore */
+/** @brief nota: campo_di_gioco e' un puntatore che punt al campo di gioco */
 typedef riquadro_t *campo_di_gioco;
 
 typedef enum bool_e
