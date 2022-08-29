@@ -242,7 +242,7 @@ int verifica_uscita(int *p, int righe_rimanenti, int colonna, int contatto){
 
     righe_rimanenti = righe_rimanenti - sottrazione_riga; /*lo faccio alla fine del ciclo perchè un tetramino non occupa sempre 4 righe ma in base a quanto è alto*/
 
-    if(righe_rimanenti > RIGHE || righe_rimanenti < 0 || contatto < 0){
+    if(righe_rimanenti > RIGHE || righe_rimanenti < 0){
 	  Perdita_uscita_campo = TRUE;
       return -1;
 	}
