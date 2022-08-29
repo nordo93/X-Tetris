@@ -207,29 +207,33 @@ void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
 }
 
 int verifica_uscita(int *p, int riga, int colonna, int contatto){
-	int i;
-    int sottrazione_riga = 0;
-    for(i=0; i < size; i++){
-
-      if(*p != 0)
-        colonna++;  /*se il puntatore del tetramino non è zero allora vuol dire che occupera anche la prossima colonna*/
-
-	  /**
-	   * @param Perdita_uscita_campo: quando è a TRUE indica l'uscita dal campo e il giocatore perde
-	   */
-      if(colonna > COLONNE || colonna < 0){
+  int i;
+  int sottrazione_riga = 0;
+  for(i=0; i < size; i++){
+    if(*p != 0)
+      colonna++;  /*se il puntatore del tetramino non è zero allora vuol dire che occupera anche la prossima colonna*/
+    
+	/**Se le colonne sono maggiori delle colonne massime allora perdita uscita campo sarà true*/
+    if(colonna > COLONNE || colonna < 0){
 	  Perdita_uscita_campo = TRUE;
       return -1;
-	}
-
+	  }
+      /*
       if(*p == 2 || *p == 4 && sottrazione_riga == 0)
         sottrazione_riga = 1;
         else if(*p == 6 || *p == 5 || *p == 3)
           sottrazione_riga = 2;
           else if(*p == 7)
-            sottrazione_riga = 3;
-
-      p++;
+            sottrazione_riga = 3;*/
+	if(*p == 1 && sottrazione_riga == 0)
+	  sottrazione_riga = 1;
+      else if(*p == 2 || *p == 4 )
+	    sottrazione_riga = 2;
+		else if(*p == 3 || *p == 5 || *p == 6)
+		  sottrazione_riga = 3;
+		  else if(*p == 7)
+		    sottrazione_riga = 4;
+    p++;
 	}
 
     riga = riga - sottrazione_riga; /*lo faccio alla fine del ciclo perchè un tetramino non occupa sempre 4 righe ma in base a quanto è alto*/

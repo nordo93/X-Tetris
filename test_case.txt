@@ -19,6 +19,22 @@ TEST programma TETRI-X:
  130 131 132 133 134 135 136 137 138 139
  140 141 142 143 144 145 146 147 148 149
 =======
+ * 0 = nessun blocco presente
+ *                  #
+ * # 1 = 1 bloccho  # 2 = 2 blocchi sovrapposti
+ *
+ * #            
+ * #                             #
+ * # 3 = 3 blocchi sovrapposti   0  4 = un posto vuoto con blocco sopra                         
+ *
+ * #                                                   #
+ * 0                                                   #
+ * 0 5 =due posti vuoti sovrapposti con blocco sopra   0 6 = un posto vuoto con due blocchi sopra
+ * 
+ * #
+ * #
+ * #
+ * # 7 = 4 blocchi sovrapposti
 
 >>>>>>> 3f90e59ad176d8714b75b23af27cb6a29621d412
 

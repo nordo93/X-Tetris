@@ -119,7 +119,6 @@ const int RIGHE = row;
 const int COLONNE = column;
 
 /** @brief Definisco variabili globali per l'errore di uscire dalle righe colonne*/
-
 bool_t Perdita_uscita_campo = FALSE;
 
 /** @brief Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer */
@@ -139,9 +138,9 @@ void init(campo_di_gioco piano, int riga, int colonna) {
 }
 
 /**
- * @brief Funzione che uso per visualizzare un ateprima del tetramino scelto dal giocatore
- * 
- * @param tetramino 
+ * @brief Funzione che uso per visualizzare un ateprima del tetramino scelto dal giocatore 
+ * @param tetramino viene passato il tetramino scelto come j, l, t ecc..
+ * @param colonna_scelta_dal_giocatore la colonna selezionata dal giocatore viene passata alla funzione
  */
 void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
 	
@@ -220,20 +219,27 @@ int verifica_uscita(int *p, int riga, int colonna, int contatto){
 	  Perdita_uscita_campo = TRUE;
       return -1;
 	}
-
+      /*
       if(*p == 2 || *p == 4 && sottrazione_riga == 0)
         sottrazione_riga = 1;
         else if(*p == 6 || *p == 5 || *p == 3)
           sottrazione_riga = 2;
           else if(*p == 7)
-            sottrazione_riga = 3;
-
-      p++;
+            sottrazione_riga = 3;*/
+	if(*p == 1 && sottrazione_riga == 0)
+	  sottrazione_riga = 1;
+      else if(*p == 2 || *p == 4 )
+	    sottrazione_riga = 2;
+		else if(*p == 3 || *p == 5 || *p == 6)
+		  sottrazione_riga = 3;
+		  else if(*p == 7)
+		    sottrazione_riga = 4;
+    p++;
 	}
 
     riga = riga - sottrazione_riga; /*lo faccio alla fine del ciclo perchè un tetramino non occupa sempre 4 righe ma in base a quanto è alto*/
 
-    if(riga > RIGHE || riga < 0){
+    if(riga > RIGHE || riga < 0 || contatto < 0){
 	  Perdita_uscita_campo = TRUE;
       return -1;
 	}
