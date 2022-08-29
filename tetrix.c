@@ -308,9 +308,9 @@ int contatto (campo_di_gioco piano, int scelta_colonna, int *p){
 				
                 found = TRUE;
                 }
-      	  	    else if (*p == 5 && piano[c + i - (COLONNE * 2)] == OCCUPATO ){ /* Inserisco anche la verifica che sotto il tetramino ci sia un pezzo,  
+      	  	    else if (*p == 5 && found == FALSE ){ /* Inserisco anche la verifica che sotto il tetramino ci sia un pezzo,  
 																				  dove deve appoggiarsi. dovrò fare così anche con P = 4?*/
-                  contatto = c - COLONNE;
+                  contatto = c + COLONNE;
                   found = TRUE;
                   }
                   else if(*inizio == 7){
