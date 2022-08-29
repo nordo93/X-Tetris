@@ -278,3 +278,36 @@ Scelta: t
 Scelgli la rotazione per questo tetramino t:
 3. ruotare di 180 gradi
 
+
+TEST CASE 6 ERRORE riquadro OCCUPATE------
+
+ X  X  X  _  X  X  X  _  _  _    
+ _  X  X  X  X  X  _  _  _  _   
+ _  _  _  X  X  X  _  _  _  _   
+ _  _  _  _  X  X  _  _  _  _    
+ _  _  _  _  X  X  _  _  _  _     
+ _  _  _  _  X  _  _  _  _  _    
+ _  _  _  _  X  _  _  _  _  _    
+ X  X  X  X  X  X  X  X  _  _    
+ X  X  X  X  X  X  X  X  _  _   
+ X  X  X  X  X  X  X  X  _  _    
+ 0  1  2  3  4  5  6  7  8  9 
+
+Seleziona la colonna dove inserire il tetramini:
+Scelta: 6
+
+Scegli un tetramino tra i seguenti i, j, o, s, l, t o z:
+Scelta: l
+
+Scelgli la rotazione per questo tetramino l:
+1. nessuna rotazione
+2. ruotare di 90 gradi
+3. ruotare di 180 gradi
+4. ruotare di 270 gradi
+-ANTEPRIMA scelta 1-
+ _  _  _  _
+ _  _  _  _
+ _  _  X  _
+ X  X  X  _
+ 6  7  8  9
+Scelta: 4
