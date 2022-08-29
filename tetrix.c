@@ -65,7 +65,7 @@ int L_free = 20;
 int L_[size]={1,1,2,0};
 int L_90[size]={3,1,0,0};
 int L_180[size]={2,4,4,0};
-int L_270[size]={1,3,0,0};
+int L_270[size]={5,3,0,0};
 
 /* Differenti versioni del tetramino O */
 int O_free = 20;
@@ -204,7 +204,16 @@ void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
         printf("\n");
 }
 
-int verifica_uscita(int *p, int riga, int colonna, int contatto){
+/**
+ * @brief verifica che il tetramino inserito non superi il limite di colonne  e righe massime
+ * 
+ * @param p indica il tetramino scelto dal giocatore
+ * @param righe_rimanenti il numero di righe rimaste vuote, quindi un tetramino I in verticale non ci starà se le righe rimaneti sono solo 3
+ * @param colonna questa indica la colonna scelta dal giocatore e aumenta di valore in base a quanto occupa il tetrmaino in termini di larghezza
+ * @param contatto questo è dove il tetramino è appogiato, lo uso come valore di entrata e uscita per verificare gli errori, se il valore cambia allora il tetramino è uscito dallo spazio di gioco
+ * @return int 
+ */
+int verifica_uscita(int *p, int righe_rimanenti, int colonna, int contatto){
 	int i;
     int sottrazione_riga = 0;
     for(i=0; i < size; i++){
@@ -219,14 +228,8 @@ int verifica_uscita(int *p, int riga, int colonna, int contatto){
 	  Perdita_uscita_campo = TRUE;
       return -1;
 	}
-      /*
-      if(*p == 2 || *p == 4 && sottrazione_riga == 0)
-        sottrazione_riga = 1;
-        else if(*p == 6 || *p == 5 || *p == 3)
-          sottrazione_riga = 2;
-          else if(*p == 7)
-            sottrazione_riga = 3;*/
-	if(*p == 1 && sottrazione_riga == 0)
+
+	if(*p == 1 && sottrazione_riga == 0) /** aggiungo questa condizione perchè in caso di tetramini come l a 90 gradi il primo valore del vettore è più alto del secondo*/
 	  sottrazione_riga = 1;
       else if(*p == 2 || *p == 4 )
 	    sottrazione_riga = 2;
@@ -237,9 +240,9 @@ int verifica_uscita(int *p, int riga, int colonna, int contatto){
     p++;
 	}
 
-    riga = riga - sottrazione_riga; /*lo faccio alla fine del ciclo perchè un tetramino non occupa sempre 4 righe ma in base a quanto è alto*/
+    righe_rimanenti = righe_rimanenti - sottrazione_riga; /*lo faccio alla fine del ciclo perchè un tetramino non occupa sempre 4 righe ma in base a quanto è alto*/
 
-    if(riga > RIGHE || riga < 0 || contatto < 0){
+    if(righe_rimanenti > RIGHE || righe_rimanenti < 0 || contatto < 0){
 	  Perdita_uscita_campo = TRUE;
       return -1;
 	}
