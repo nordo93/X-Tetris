@@ -71,7 +71,7 @@ void init(campo_di_gioco piano, int riga, int colonna) {
 
 /**
  * @brief Funzione che uso per visualizzare un ateprima del tetramino scelto dal giocatore 
- * @param tetramino viene passato il tetramino scelto come j, l, t ecc..
+ * @param tetramino punta al primo elemento dell'array del tetramino che ha selezionato il giocatore
  * @param colonna_scelta_dal_giocatore la colonna selezionata dal giocatore viene passata alla funzione
  */
 void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
@@ -79,10 +79,11 @@ void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
 	printf("-ANTEPRIMA scelta 1-\n");
 
 	campo_di_gioco campo_tetramino = (campo_di_gioco) malloc(size*size*sizeof(riquadro_t));
-	int fondo_anteprima = (size*size) - (size); /** sono 16 caselle in tutto, un quadrato 4 x 4 , il fondo della prima colonna è il 12 quadrato quindi 4 x 4 - 4*/
-	init(campo_tetramino, 4, 4);
+	int fondo_anteprima = (size*size) - (size); /* sono 16 caselle in tutto, un quadrato 4 x 4 , il fondo della prima colonna è il 12 quadrato quindi 4 x 4 - 4*/
+	init(campo_tetramino, 4, 4);  /*Iniziallizza il campo tetramino a vuoto*/
 	int i,r,c;
-	
+	/*Ciclo for che analizza l'array del tetramino passato dalla funzione
+	* Imposta a OCCUPATO o VOUTO il campo_tetramino in base al numero passato. guardare README.md per le regole di costruzione*/
     for (i=0; i<size; i++) {
             if(*tetramino == 6){
             		campo_tetramino[fondo_anteprima + i] = VUOTO;
@@ -118,6 +119,7 @@ void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
 		tetramino++;
         }
 
+        /*Ciclo for per stampare a video l'antetprima, simile alla funzione stampa*/
 		for (r=0; r<size; r++) {
           for (c=0; c<size; c++) {
             riquadro_t riquadro = campo_tetramino[r*size + c];
@@ -139,7 +141,7 @@ void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
 /**
  * @brief verifica che il tetramino inserito non superi il limite di colonne  e righe massime
  * 
- * @param p indica il tetramino scelto dal giocatore
+ * @param p punta al primo elemento dell'array del tetramino che ha selezionato il giocatore
  * @param righe_rimanenti il numero di righe rimaste vuote, quindi un tetramino I in verticale non ci starà se le righe rimaneti sono solo 3
  * @param colonna questa indica la colonna scelta dal giocatore e aumenta di valore in base a quanto occupa il tetrmaino in termini di larghezza
  * @param contatto questo è dove il tetramino è appogiato, lo uso come valore di entrata e uscita per verificare gli errori, se il valore cambia allora il tetramino è uscito dallo spazio di gioco
@@ -149,12 +151,15 @@ void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
 int verifica_uscita(int *p, int righe_rimanenti, int colonna, int contatto){
 	int i;
     int sottrazione_riga = 0;
+	/*Ciclo for che analizza l'array del tetramino passato dalla funzione
+	* Verifico se il tetramino ha un valore diverso da 0, quindi se occupa una colonna
+	*/
     for(i=0; i < size; i++){
 
       if(*p != 0)
         colonna++;  /*se il puntatore del tetramino non è zero allora vuol dire che occupera anche la prossima colonna*/
 
-	  /** @see @param Perdita_uscita_campo: quando è a TRUE indica l'uscita dal campo e il giocatore perde*/
+	  /** @see Perdita_uscita_campo imposto a true perchè sono uscito dal campo da gioco e ho quindi perso*/
       if(colonna > COLONNE || colonna < 0){
 	  Perdita_uscita_campo = TRUE;
       return -1;
@@ -182,7 +187,14 @@ int verifica_uscita(int *p, int righe_rimanenti, int colonna, int contatto){
 }
 
 
-
+/**
+ * @brief Verifica se il tetramino inserito non vada a scrivere su una casella già occupata
+ * @attention Questa funzione non viene più usata nel codice, perchè la logica porterà sempre il tetramino su una casella non occupata.
+ * @param piano punta al campo di gioco del giocatore 1 o 2 in base al turno
+ * @param scelta
+ * @param p punta al primo elemento dell'array del tetramino che ha selezionato il giocatore
+ * @return bool_t TRUE se la casella è occupata , FALSE se il ciclo finisce e quindi nessuna casella è occupata
+ */
 bool_t verifica_occupata (campo_di_gioco piano, int scelta, int * p){
   
   int i;
@@ -221,6 +233,15 @@ bool_t verifica_occupata (campo_di_gioco piano, int scelta, int * p){
     return FALSE;
 }
 
+/**
+ * @brief Questa funzione parte ad analizzare tutta la colonna che il giocatore ha scelto,
+ * più le 3 colonne successive a quella scelta, questo perchè un tetramino occupa fino a 4 colonne per esempio @see I_
+ * Quando viene trovato una casella occupata e il valore di *p è diverso da zero allora viene restituito dove dovrà poggiare il tetramino.
+ * @param piano punta al campo di gioco del giocatore 1 o 2 in base al turno
+ * @param scelta_colonna  indica la colonna scelta dal giocatore all'interno del main
+ * @param p punta al primo elemento dell'array del tetramino che ha selezionato il giocatore
+ * @return int contatto indica dove il tetramino è caduto, in base alla colonna scelta dal giocatore
+ */
 int contatto (campo_di_gioco piano, int scelta_colonna, int *p){
 	
 	int * inizio = p; /*salvo l'inizio del mio tetramino*/
@@ -233,7 +254,7 @@ int contatto (campo_di_gioco piano, int scelta_colonna, int *p){
 	for (c = scelta_colonna; c < contatto - COLONNE; ){
 		for(i = 0; i < size ; i++){
 		  if(piano[c + i] == OCCUPATO && *p > 0 && contatto_minore == FALSE){
-		    printf("trovato contatto a : %d\n", c + i);
+		    printf("trovato contatto a : %d\n", c + i); /*printf inutile, lo tengo per eventuali errori nel codice*/
         	  if(*p == 4 || *p == 6){ /*Verifico se sotto il tetramino c'è qualcosa su cui appoggiare*/
                 contatto = c;
 				
@@ -273,6 +294,13 @@ int contatto (campo_di_gioco piano, int scelta_colonna, int *p){
 
 }
 
+/**
+ * @brief Modifica il campo di gioco in base a dove è caduto il tetramino a cominciare dalla posizione passata dalla funzione @see contatto
+ * @param piano punta al campo di gioco del giocatore 1 o 2 in base al turno
+ * @param p punta al primo elemento dell'array del tetramino che ha selezionato il giocatore
+ * @param scelta_colonna 
+ * @return bool_t FALSE se il giocatore è uscito da righe o colonne, TRUE se è andato tutto bene
+ */
 bool_t salva_tetramino (campo_di_gioco piano, int *p, int scelta_colonna){
 	int r, c, i;
 	bool_t is_ok = FALSE, occupata = FALSE;
@@ -350,13 +378,18 @@ bool_t salva_tetramino (campo_di_gioco piano, int *p, int scelta_colonna){
 
 }
 
-/*scelta rotazione*/
-
+/**
+ * @brief Funzione chiamata dalla funzione scelta per scegliere la rotazione del tetramino
+ * @param code input da tastiera scelto dal main e passato dalla funzione scelta, tetramino scelta tra quelli disponibili
+ * @param colonna_scelta_dal_giocatore input da tastiera, colonna scielta dal giocatore
+ * @return int* passa un puntatore che punta al primo elemento dell'array del tetramino che ha selezionato il giocatore
+ */
 int * rotazione(char code, int colonna_scelta_dal_giocatore){
   int *p;
   int chose = 0;
   bool_t is_ok = FALSE;
 
+/*Funzione molto luga ma solo solo una serie di if che fanno scegliere al gicatore la rotazione e assegna a p il primo elemento di uno degli array*/
   printf("Scelgli la rotazione per questo tetramino %c:\n", code);
   
   if( code == 'j'){
@@ -531,6 +564,7 @@ int * rotazione(char code, int colonna_scelta_dal_giocatore){
 	return p;
 }
 
+/** @brief Funzione che restituisce quanti tetramini sono rimasti disponibili*/
 void Visualizza_pezzi_disponibili(){
   printf("Sono rimasti i seguenti tetramini:\n");
   printf("I : %d\n", I_free);
@@ -546,6 +580,12 @@ void Visualizza_pezzi_disponibili(){
 
 }
 
+/**
+ * @brief funzione chiamata dal main per scegliere quale tetramino usare tra i seguenti i, j, o, s, l, t o z
+ * 
+ * @param colonna_scelta_dal_giocatore questo parametro viene passato solo perchè dopo voglio stampare l'anteprima del tetramino scelto @see stampa_anteprima
+ * @return int* passa un puntatore che punta al primo elemento dell'array del tetramino che ha selezionato il giocatore, in base alla funzione @see rotazione
+ */
 int * scelta (int colonna_scelta_dal_giocatore){
 	char code;
 	int *p;
@@ -633,13 +673,23 @@ int * scelta (int colonna_scelta_dal_giocatore){
 }
 
 	
-
+/**
+ * @brief Funzione chiamata dal main per avviare tutte le funzioni relative alla selezione del tetramino,
+ * alla sua rotazione e al suo posizionamento.
+ * 
+ * @param piano punta al campo di gioco del giocatore 1 o 2 in base al turno
+ * @param RIGHE il numero di righe del campo da gioco
+ * @param COLONNE il numero di colonne del campo da gioco
+ * @param turno indica chi sta giocando se il giocatore 1 o 2
+ * @return è presente un return in caso di errore. in quel caso la variabile globale sarà TRUE @see Perdita_uscita_campo
+ */
 void seleziona_tetramino(campo_di_gioco piano, int RIGHE, int COLONNE, int turno)
 {
 	bool_t is_ok = FALSE;
 	int scelta_colonna = -1;
 	int tetramino[size] = {1,1,1,1};
 	
+	/*inserisco un ciclo while per selezionare la colonna e il tetramino corretto e utilizzabile*/
 	while (is_ok == FALSE){
 
 	  printf("Seleziona la colonna dove inserire il tetramini:\n");
@@ -650,27 +700,26 @@ void seleziona_tetramino(campo_di_gioco piano, int RIGHE, int COLONNE, int turno
       printf("\n");
 
 	  if( turno == 1 && scelta_colonna < 10 && scelta_colonna >= 0)
-	    is_ok = TRUE;
+	    is_ok = TRUE; /*se il turno è del giocatore uno deve selezionare una colonna da 0 a 9*/
 	    else if( turno == 2 && scelta_colonna >= 10 && scelta_colonna < 20 )
-	      is_ok = TRUE;
+	      is_ok = TRUE; /*se il turno è del giocatore due deve selezionare una colonna da 10 a 19*/
 	      else{
 	      	printf("!!! ATTENZIONE !!!:\tScelta sbagliata. Hai selezionato una colonna sbagliata.\n");
 				  }
 	        
 	  
-
+      /*Se seleziono colonna corretta allora avanzo*/
 	  if ( is_ok == TRUE ){
     
 	    int *p;
         int i;
-        
+       /*scelgo a quale tetramino punterà il mio puntatore*/ 
 	    p = scelta(scelta_colonna);
-        
+
+        /*salva tetramino oltre a modificare il campo di gioco in base alle mie scelte restituisce anche errori evenutali is_ok in questo caso sarà false*/
 		if(turno == 1)
-	      is_ok = salva_tetramino(piano, p, scelta_colonna);
-        
+	      is_ok = salva_tetramino(piano, p, scelta_colonna); 
         /* Nel caso del giocatore 2 diminusco le colonne di 10 perchè la selezione nel campo2 va da 10 a 19 */
-        
 		if(turno == 2)
 		  is_ok = salva_tetramino(piano, p, scelta_colonna - 10);
 		
@@ -682,6 +731,13 @@ void seleziona_tetramino(campo_di_gioco piano, int RIGHE, int COLONNE, int turno
 	}
 }
 
+/**
+ * @brief viene chiamata quando una riga è completamente, in quel caso la elimina
+ * 
+ * @param piano punta al campo di gioco del giocatore 1 o 2 in base al turno
+ * @param riga_punto la riga che è completamente occupata questo lo estraggo dalla funzione @see calcola_punti ricorsivamente controlla tutto il campo da gioco e quale riga siamo arrivati
+ * @param colonna la colonna a cui siamo arrivati, non la utilizzo ma è stata inserita per sviluppi futuri
+ */
 void rimuovi_riga(campo_di_gioco piano, int riga_punto, int colonna){
 
     int r= 1, c = 0, i;
@@ -702,7 +758,14 @@ void rimuovi_riga(campo_di_gioco piano, int riga_punto, int colonna){
 	 }
 }
 
-
+/**
+ * @brief controlla tutto il campo da gioco finche non trova una riga completa da eliminare e quindi generare punteggio
+ * @note assegga un bonus in caso di righe completate contemporaneamente e assegna quindi più punti
+ * @param piano punta al campo di gioco del giocatore 1 o 2 in base al turno
+ * @param RIGHE numero di righe del campo da gioco
+ * @param COLONNE numero di colonne del campo da gioco
+ * @return int Ritorna il numero di punti, 1 se il valore di bonus è 1 quindi ho eliminato una colonna, 3 se bonus = 2 , 6 se ne elimino 3 insieme e 4 in tutti gli altri casi
+ */
 int calcola_punti(campo_di_gioco piano, int RIGHE, int COLONNE) {
     int r, c;
 	int punteggio = 0;
@@ -740,12 +803,16 @@ int calcola_punti(campo_di_gioco piano, int RIGHE, int COLONNE) {
               return 0;
 }
 
-/****************************************************************
-* stampa:	stampa il campo di gioco           				    *
-*		assegno alla variabile riquadro il valore del piano     *
-*   nella posizione r e c.										*
-****************************************************************/
 
+/**
+ * @brief stampa il campo di gioco , assegno alla variabile riquadro il valore del piano nella posizione r e c.
+ * 
+ * @param piano punta al campo di gioco del giocatore 1
+ * @param piano2 punta al campo di gioco del giocatore 2 
+ * @param RIGHE numero di righe del campo da gioco, i campi da gioco sono gradi uguali
+ * @param COLONNE numero di righe del campo da gioco, i campi da gioco sono gradi uguali
+ * @param giocatori passo il numero di giocatori single player o multi player, perchè stampo o 1 o 2 campi da gioco.
+ */
 void stampa(campo_di_gioco piano,campo_di_gioco piano2, int RIGHE, int COLONNE, giocatori_t giocatori) {
     int r, c;
 
@@ -803,7 +870,7 @@ void stampa(campo_di_gioco piano,campo_di_gioco piano2, int RIGHE, int COLONNE, 
   }
 }
 
-/*Usata nel Multiplayer In questa modalità si avranno il doppio di pezzi a disposizione.*/
+/** @brief Usata nel Multiplayer In questa modalità si avranno il doppio di pezzi a disposizione.*/
 void raddoppia_tetramini(){
   I_free = I_free * 2;
   J_free = J_free * 2;
@@ -820,6 +887,13 @@ void raddoppia_tetramini(){
   * numero di linee nella parte più bassa del campo di gioco: una posizione vuota diventa piena e viceversa.    *
   ***************************************************************************************************************/
 
+/**
+ * @brief Nel caso il giocatore cancelli 3 o più linee con una singola mossa, la variabile inverti_campo diventa TRUE
+ * e il campo dell’avversario viene modificato invertendo il corrispondente numero di linee nella parte più bassa del campo di gioco: una posizione vuota diventa piena e viceversa.  
+ * @param campo_giocatore punta al campo di gioco del giocatore 1 o 2 in base al turno
+ * @param RIGHE numero di righe del campo di gioco
+ * @param COLONNE numero di colonne del campo di gioco
+ */
 void inverti_campo_di_gioco(campo_di_gioco campo_giocatore, int RIGHE, int COLONNE){
 	int r,c;
 	for (r=RIGHE - 3; r<RIGHE; r++) {
@@ -846,11 +920,28 @@ void TEST_INVERTI(campo_di_gioco campo_giocatore, int RIGHE, int COLONNE){
 
 
 /**
- * @brief funzione che uso a scopo di test
- * 
- * @param piano 
- * @param RIGHE 
- * @param COLONNE 
+ * @brief funzione che uso a scopo di test, stampa il campo da gioco e il numero di ogni casella
+ * OUTPUT:
+ ---TEST----
+
+   0   1   2   3   4   5   6   7   8   9
+  10  11  12  13  14  15  16  17  18  19
+  20  21  22  23  24  25  26  27  28  29
+  30  31  32  33  34  35  36  37  38  39
+  40  41  42  43  44  45  46  47  48  49
+  50  51  52  53  54  55  56  57  58  59
+  60  61  62  63  64  65  66  67  68  69
+  70  71  72  73  74  75  76  77  78  79
+  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99
+ 100 101 102 103 104 105 106 107 108 109
+ 110 111 112 113 114 115 116 117 118 119
+ 120 121 122 123 124 125 126 127 128 129
+ 130 131 132 133 134 135 136 137 138 139
+ 140 141 142 143 144 145 146 147 148 149
+ * @param piano punta al campo di gioco del giocatore 1 o 2 in base al turno
+ * @param RIGHE numero di righe del campo di gioco
+ * @param COLONNE numero di colonne del campo di gioco
  * @return void 
  */
 void test(campo_di_gioco piano, int RIGHE, int COLONNE){
