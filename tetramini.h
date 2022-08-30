@@ -1,16 +1,44 @@
-/** @page 
-* pezzi di Tetris: I, J, L, O, S, T, Z
-* Logica del gioco
-* immagine tetramini posizione 0 : https://upload.wikimedia.org/wikipedia/commons/3/39/Tetrominoes_IJLO_STZ_Worlds.svg
-*/
+/**
+ * @file tetramini.h
+ * @author Alessandro Cecchin (859869@stud.unive.it)
+ * @version 0.9.1
+ * @date 2022-07-19
+ * 
+ * @brief Include tutti vettori dei tetramini, ogni tetramino viene costruito con questa regola:
+ * 
+ * tipo di pezzi del Tetris: I, J, L, O, S, T, Z
+ * 
+ * immagine tetramini posizione 0 : https://upload.wikimedia.org/wikipedia/commons/3/39/Tetrominoes_IJLO_STZ_Worlds.svg
+ * 
+ * @section logica Logica di costruzione del tetramino :
+ * cosa vogliono dire i numeri all'interno degli array dei tetramini:\n
+ * 1 = 1 bloccho occupato; 2 = 2 blocchi sovrapposti; 3 = 3 blocchi sovrapposti\n
+ * 4 = 1 blocco vuoto e sopra di esso uno pien0; 5 = due blocchi vuoti e uno sopra di essi pieno\n
+ * 6 = un blocco vuoto e sopra di esso due pieni; 7 = 4 blocchi sovrapposti uno all'altro
+ * @subsection I I_[4] = {1,1,1,1}
+ * vuol dire che il tetramino è in posizione 0 e occupa un solo blocco in altezza per ogni colonna\n
+ * _  _  _  _\n
+ * X  X  X  X\n
+ * 0  1  2  3
+ * @subsection L J_90[4]={3,5,0,0}
+ * il tetramino è in poszione ruotata di 90 gradi e occupa con la prima casella 3 blocchi in altezza,\n
+ * nella seconda casella sempre 3 blocchi i altezza ma 2 sono vuoti e 1 è pieno e occupato.\n
+ * i restanti a 0 sono invece colonne libere\n
+ * 
+ * _  _  _  _\n
+ * X  X  _  _\n
+ * X  _  _  _\n
+ * X  _  _  _\n
+ * 0  1  2  3
+ * */
 
-/**@{*//** @brief definisco il numero di righe e colonne
- * @def row è il numero di righe
- * @def column è il numero di colonne
- * @def size indica la grandezza del vettore di ogni tetramino */
+
+/** @def @param row è il numero di righe \def */
 #define row 15
+/** @def @param column è il numero di colonne*/
 #define column 10
-#define size 4 /**@}*
+/** @def @param size indica la grandezza del vettore di ogni tetramino*/
+#define size 4 
 
 /*
  * 0 = nessun blocco presente

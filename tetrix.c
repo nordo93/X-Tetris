@@ -11,13 +11,16 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+/**
+ * @include tetramini.h @see tetramini.h
+ */
 #include "tetramini.h"
 
 /** @brief Definisco delle costanti per il numero di righe e colonne*/
 const int RIGHE = row;
 const int COLONNE = column;
 
-/** @enum Definisco una variabile per il numero di giocatori*/
+/** @enum giocatori Definisco una variabile per il numero di giocatori*/
 typedef enum giocatori
 {
     SINGLE_PLAYER = 1,
@@ -25,7 +28,7 @@ typedef enum giocatori
     NOT_SELECTED = -99
 } giocatori_t;
 
-/** @enum riquadro del piano di gioco che può essere occupato o meno.*/
+/** @enum riquadro casella del piano di gioco che può essere occupato o meno.*/
 typedef enum riquadro
 { 
     VUOTO,
