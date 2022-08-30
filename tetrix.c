@@ -70,23 +70,20 @@ int J_90[size]={3,5,0,0};
 int J_180[size]={4,4,2,0};
 int J_270[size]={1,3,0,0};
 
-/** @brief Differenti versioni del tetramino L
-* @param L_free quanti tetramino L sono disponibili
-* @param L_ tetramino L in posizione base
-* @param L_90 tetramino L ruotata di 90 gradi
-* @param L_180 tetramino L ruotata di 180 gradi
-* @param L_270 tetramino L ruotata di 270 gradi
-*/
+/** @param L_free quanti tetramino L sono disponibili*/
 int L_free = 20;
+/** @param L_ tetramino L in posizione base */
 int L_[size]={1,1,2,0};
+/** @brief  tetramino L ruotata di 90 gradi  @param L_90*/
 int L_90[size]={3,1,0,0};
+/** @brief  tetramino L ruotata di 180 gradi  @param L_180*/
 int L_180[size]={2,4,4,0};
+/** @brief  tetramino L ruotata di 270 gradi  @param L_270*/
 int L_270[size]={5,3,0,0};
 
-/** @brief Differenti versioni del tetramino O
-* @param O_free quanti tetramino O sono disponibili
-* @param O_ tetramino i in posizione base
-*/
+/** Differenti versioni del tetramino O.
+ * @param O_free,O_ Tetramini O disponibili, e O_ tetramino O in posizione base
+ */
 int O_free = 20;
 int O_[size]={2,2,0,0};
 

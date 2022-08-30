@@ -66,13 +66,13 @@ void \mbox{\hyperlink{tetrix___o_l_d_8c_a5888954e236254cc7e6ff5cffedbf90f}{init}
 \begin{DoxyCompactList}\small\item\em Inizializzatore\+: inizializza il campo da gioco a VUOTO. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{tetrix___o_l_d_8c_afac1e7216112bd154f7d7fb52aad0085}{stampa\+\_\+anteprima}} (int $\ast$tetramino)
 \begin{DoxyCompactList}\small\item\em Funzione che uso per visualizzare un ateprima del tetramino scelto dal giocatore. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{tetrix___o_l_d_8c_a0264ab91445469301bf9c6a551a393d3}{verifica\+\_\+uscita}} (int $\ast$\mbox{\hyperlink{test__case_8txt_a24d9752995a19a6e21b0d13e449ab5bb}{p}}, int riga, int colonna, int \mbox{\hyperlink{test__case_8txt_af94a27e3a3758f029c515a69a1bdf8cc}{contatto}})
+int \mbox{\hyperlink{tetrix___o_l_d_8c_a0264ab91445469301bf9c6a551a393d3}{verifica\+\_\+uscita}} (int $\ast$p, int riga, int colonna, int \mbox{\hyperlink{tetrix_8c_a18f5b9291b9589c18c9f53d9d3531b5c}{contatto}})
 \item 
-\mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}} \mbox{\hyperlink{tetrix___o_l_d_8c_a8a0b7e3b055bd38e37aa36052cbc1609}{verifica\+\_\+occupata}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int \mbox{\hyperlink{tetrix_8c_a10f58b6e2a1be6042acd8ecf38be8027}{scelta}}, int $\ast$\mbox{\hyperlink{test__case_8txt_a24d9752995a19a6e21b0d13e449ab5bb}{p}})
+\mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}} \mbox{\hyperlink{tetrix___o_l_d_8c_a8a0b7e3b055bd38e37aa36052cbc1609}{verifica\+\_\+occupata}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int \mbox{\hyperlink{tetrix_8c_a10f58b6e2a1be6042acd8ecf38be8027}{scelta}}, int $\ast$p)
 \item 
-int \mbox{\hyperlink{tetrix___o_l_d_8c_a18f5b9291b9589c18c9f53d9d3531b5c}{contatto}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int \mbox{\hyperlink{test__case_8txt_a66fa170ba64e0871242cfceefa28d77e}{scelta\+\_\+colonna}}, int $\ast$\mbox{\hyperlink{test__case_8txt_a24d9752995a19a6e21b0d13e449ab5bb}{p}})
+int \mbox{\hyperlink{tetrix___o_l_d_8c_a18f5b9291b9589c18c9f53d9d3531b5c}{contatto}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int scelta\+\_\+colonna, int $\ast$p)
 \item 
-\mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}} \mbox{\hyperlink{tetrix___o_l_d_8c_ad4f5c4e816365358b2219ae64992fd84}{salva\+\_\+tetramino}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int $\ast$\mbox{\hyperlink{test__case_8txt_a24d9752995a19a6e21b0d13e449ab5bb}{p}}, int \mbox{\hyperlink{test__case_8txt_a66fa170ba64e0871242cfceefa28d77e}{scelta\+\_\+colonna}})
+\mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}} \mbox{\hyperlink{tetrix___o_l_d_8c_ad4f5c4e816365358b2219ae64992fd84}{salva\+\_\+tetramino}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int $\ast$p, int scelta\+\_\+colonna)
 \item 
 int $\ast$ \mbox{\hyperlink{tetrix___o_l_d_8c_a9b06a0886ac03e59e886c6266da9508f}{rotazione}} (char code)
 \item 
@@ -80,21 +80,21 @@ void \mbox{\hyperlink{tetrix___o_l_d_8c_aa3bc71145727910fda60fad153a740bd}{Visua
 \item 
 int $\ast$ \mbox{\hyperlink{tetrix___o_l_d_8c_a96821f09192799c1acbb4d1850e9b2ab}{scelta}} ()
 \item 
-void \mbox{\hyperlink{tetrix___o_l_d_8c_a6e65a46c4e3bacc4754e0fe0af59ede6}{seleziona\+\_\+tetramino}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int \mbox{\hyperlink{test__case_8txt_af738b94a0528cf8ec70228f14a1a1512}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, int turno)
+void \mbox{\hyperlink{tetrix___o_l_d_8c_a6e65a46c4e3bacc4754e0fe0af59ede6}{seleziona\+\_\+tetramino}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, int turno)
 \item 
 void \mbox{\hyperlink{tetrix___o_l_d_8c_a3fd5c682f4d1f903342251a529d0ee0e}{rimuovi\+\_\+riga}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int riga\+\_\+punto, int colonna)
 \item 
-int \mbox{\hyperlink{tetrix___o_l_d_8c_a682f38efcb81ebea210a63c2d1dc6aca}{calcola\+\_\+punti}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int \mbox{\hyperlink{test__case_8txt_af738b94a0528cf8ec70228f14a1a1512}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}})
+int \mbox{\hyperlink{tetrix___o_l_d_8c_a682f38efcb81ebea210a63c2d1dc6aca}{calcola\+\_\+punti}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}})
 \item 
-void \mbox{\hyperlink{tetrix___o_l_d_8c_a96526f8643da2c5248062e5d2832f069}{test}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int \mbox{\hyperlink{test__case_8txt_af738b94a0528cf8ec70228f14a1a1512}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}})
+void \mbox{\hyperlink{tetrix___o_l_d_8c_a96526f8643da2c5248062e5d2832f069}{test}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}})
 \item 
-void \mbox{\hyperlink{tetrix___o_l_d_8c_adc63289992b5330a17a91eb5e8924fd0}{stampa}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, \mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano2, int \mbox{\hyperlink{test__case_8txt_af738b94a0528cf8ec70228f14a1a1512}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, \mbox{\hyperlink{tetrix_8c_a727a6f710e0f7bcf136b908b5cff365d}{giocatori\+\_\+t}} \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}})
+void \mbox{\hyperlink{tetrix___o_l_d_8c_adc63289992b5330a17a91eb5e8924fd0}{stampa}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, \mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano2, int \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}}, \mbox{\hyperlink{tetrix_8c_a727a6f710e0f7bcf136b908b5cff365d}{giocatori\+\_\+t}} \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}})
 \item 
 void \mbox{\hyperlink{tetrix___o_l_d_8c_a3db906a4d562c2e7b2e92b92849943ca}{raddoppia\+\_\+tetramini}} ()
 \item 
-void \mbox{\hyperlink{tetrix___o_l_d_8c_aa11dce9cbdbceb69cc11f68db2609547}{inverti\+\_\+campo\+\_\+di\+\_\+gioco}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} campo\+\_\+giocatore, int \mbox{\hyperlink{test__case_8txt_af738b94a0528cf8ec70228f14a1a1512}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}})
+void \mbox{\hyperlink{tetrix___o_l_d_8c_aa11dce9cbdbceb69cc11f68db2609547}{inverti\+\_\+campo\+\_\+di\+\_\+gioco}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} campo\+\_\+giocatore, int \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}})
 \item 
-void \mbox{\hyperlink{tetrix___o_l_d_8c_adf818de7cbdc4a4cf738bfbfe3be289c}{TEST\+\_\+\+INVERTI}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} campo\+\_\+giocatore, int \mbox{\hyperlink{test__case_8txt_af738b94a0528cf8ec70228f14a1a1512}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}})
+void \mbox{\hyperlink{tetrix___o_l_d_8c_adf818de7cbdc4a4cf738bfbfe3be289c}{TEST\+\_\+\+INVERTI}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} campo\+\_\+giocatore, int \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}}, int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}})
 \item 
 int \mbox{\hyperlink{tetrix___o_l_d_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \end{DoxyCompactItemize}
