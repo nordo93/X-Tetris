@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['j_0',['j',['../test__case_8txt.html#a31155ca7df89c953c9c7243cafa66f48',1,'test_case.txt']]],
-  ['j_5f_1',['J_',['../tetramini_8h.html#ad87da70e163fd593f54677543e410206',1,'tetramini.h']]],
-  ['j_5f180_2',['J_180',['../tetramini_8h.html#ad5f4569ab3b3091256882b93d2beae7c',1,'tetramini.h']]],
-  ['j_5f270_3',['J_270',['../tetramini_8h.html#a68d167cb3b6f4e8adbaa34c220e5d91a',1,'tetramini.h']]],
-  ['j_5f90_4',['J_90',['../tetramini_8h.html#acc13d1df0c48a8feb07a5533efd2a8ff',1,'tetramini.h']]],
-  ['j_5ffree_5',['J_free',['../tetramini_8h.html#abddddcaa391b55ca521a2dd642ecd67c',1,'tetramini.h']]]
+  ['i_0',['i',['../test__case_8txt.html#acb559820d9ca11295b4500f179ef6392',1,'test_case.txt']]],
+  ['i_5f_1',['I_',['../tetramini_8h.html#a486a6c33397876c16f1eed6ee6db9a6e',1,'tetramini.h']]],
+  ['i_5f180_2',['I_180',['../tetramini_8h.html#a70bb3debf589d0e6cb018c995b9b55b7',1,'tetramini.h']]],
+  ['i_5ffree_3',['I_free',['../tetramini_8h.html#ad6fc8f02b9b9dd16cbb053cb94d9d75d',1,'tetramini.h']]],
+  ['iniziale_4',['iniziale',['../_r_e_a_d_m_e_8txt.html#a7b736ebf71edacfad66415b47569d0c0',1,'README.txt']]],
+  ['intero_5',['intero',['../_r_e_a_d_m_e_8txt.html#a10be0d6dcb3c3e0e2267859fd240f680',1,'README.txt']]],
+  ['inverti_5fcampo_6',['inverti_campo',['../tetrix_8c.html#a051ce5d94ece76dfba76cd03264c2486',1,'tetrix.c']]]
 ];

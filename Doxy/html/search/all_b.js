@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['p_0',['p',['../test__case_8txt.html#a24d9752995a19a6e21b0d13e449ab5bb',1,'test_case.txt']]],
-  ['perdita_5fuscita_5fcampo_1',['Perdita_uscita_campo',['../tetrix_8c.html#a41c911f3da02a829ac482dd61c0d8528',1,'tetrix.c']]]
+  ['o_0',['o',['../test__case_8txt.html#a3870c6d8236123c65e7b4d245f140f0d',1,'test_case.txt']]],
+  ['o_1',['O',['../_r_e_a_d_m_e_8txt.html#a26d6333ccea58617f2707b1346944b1d',1,'README.txt']]],
+  ['o_5f_2',['O_',['../tetramini_8h.html#ababe806de57c7e08be051e69f74aa3be',1,'tetramini.h']]],
+  ['o_5ffree_3',['O_free',['../tetramini_8h.html#a6bc5b256b323182ec7dde63f1e11f7f7',1,'tetramini.h']]],
+  ['occupato_4',['OCCUPATO',['../tetrix_8c.html#aacae98a513bf46f84ca1f3554bae431ba86eb6f31a721a0cffb9e409a63428cb7',1,'tetrix.c']]]
 ];

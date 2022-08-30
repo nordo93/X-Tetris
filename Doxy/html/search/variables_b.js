@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['t_5f_0',['T_',['../tetramini_8h.html#aa44c256536afa00286b5506d5f0823e2',1,'tetramini.h']]],
-  ['t_5f180_1',['T_180',['../tetramini_8h.html#a16fdec22fb412c8aca0c79119e3651b0',1,'tetramini.h']]],
-  ['t_5f270_2',['T_270',['../tetramini_8h.html#a3616df84af6179d88eaac1e6344007ab',1,'tetramini.h']]],
-  ['t_5f90_3',['T_90',['../tetramini_8h.html#a5c83b710aff3e681d3db4c312c6a0b46',1,'tetramini.h']]],
-  ['t_5ffree_4',['T_free',['../tetramini_8h.html#afa13dff6dc6c64568b7d13a46631815e',1,'tetramini.h']]]
+  ['r_0',['r',['../test__case_8txt.html#acab531abaa74a7e664e3986f2522b33a',1,'test_case.txt']]],
+  ['righe_1',['RIGHE',['../test__case_8txt.html#af738b94a0528cf8ec70228f14a1a1512',1,'RIGHE():&#160;test_case.txt'],['../tetrix_8c.html#ae9f8d8d635995b45444dd02143e0a102',1,'RIGHE():&#160;tetrix.c']]]
 ];
