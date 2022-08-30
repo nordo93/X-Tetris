@@ -211,7 +211,8 @@ void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
  * @param righe_rimanenti il numero di righe rimaste vuote, quindi un tetramino I in verticale non ci starà se le righe rimaneti sono solo 3
  * @param colonna questa indica la colonna scelta dal giocatore e aumenta di valore in base a quanto occupa il tetrmaino in termini di larghezza
  * @param contatto questo è dove il tetramino è appogiato, lo uso come valore di entrata e uscita per verificare gli errori, se il valore cambia allora il tetramino è uscito dallo spazio di gioco
- * @return int 
+ * @return ritrona di nuovo contatto se non ci sono errori, sennò ritorna -1
+ * @attention guardare info sotto, aggiungo questa condizione perchè in caso di tetramini come l a 90 gradi il primo valore del vettore è più alto del secondo
  */
 int verifica_uscita(int *p, int righe_rimanenti, int colonna, int contatto){
 	int i;
@@ -221,17 +222,15 @@ int verifica_uscita(int *p, int righe_rimanenti, int colonna, int contatto){
       if(*p != 0)
         colonna++;  /*se il puntatore del tetramino non è zero allora vuol dire che occupera anche la prossima colonna*/
 
-	  /**
-	   * @param Perdita_uscita_campo: quando è a TRUE indica l'uscita dal campo e il giocatore perde
-	   */
+	  /** @see @param Perdita_uscita_campo: quando è a TRUE indica l'uscita dal campo e il giocatore perde*/
       if(colonna > COLONNE || colonna < 0){
 	  Perdita_uscita_campo = TRUE;
       return -1;
 	}
 
-	if(*p == 1 && sottrazione_riga == 0) /** aggiungo questa condizione perchè in caso di tetramini come l a 90 gradi il primo valore del vettore è più alto del secondo*/
+	if(*p == 1 && sottrazione_riga == 0) /** @if if(*p == 1 && sottrazione_riga == 0)*/
 	  sottrazione_riga = 1;
-      else if(*p == 2 || *p == 4 )
+      else if(*p == 2 || *p == 4 ) 
 	    sottrazione_riga = 2;
 		else if(*p == 3 || *p == 5 || *p == 6)
 		  sottrazione_riga = 3;
