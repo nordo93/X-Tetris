@@ -9,7 +9,7 @@ Wikipedia https://it.wikipedia.org/wiki/Tetris.
 
 - Autore Alessandro Cecchin
 - Progetto per il corso IaP dell'Università di Venezia
-- ✨Magic ✨
+- ✨Magic ✨ click on image per andare alla pagina github
 
 ## Features
 
