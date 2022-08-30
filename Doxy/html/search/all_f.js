@@ -1,4 +1,15 @@
 var searchData=
 [
-  ['x_2dtetris_0',['X-Tetris',['../md__c__temp__x__tetris__r_e_a_d_m_e.html',1,'']]]
+  ['t_5f_0',['T_',['../tetrix_8c.html#aa44c256536afa00286b5506d5f0823e2',1,'T_():&#160;tetrix.c'],['../tetrix__2_8c.html#aa44c256536afa00286b5506d5f0823e2',1,'T_():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#aa44c256536afa00286b5506d5f0823e2',1,'T_():&#160;tetrix_OLD.c']]],
+  ['t_5f180_1',['T_180',['../tetrix_8c.html#a16fdec22fb412c8aca0c79119e3651b0',1,'T_180():&#160;tetrix.c'],['../tetrix__2_8c.html#a16fdec22fb412c8aca0c79119e3651b0',1,'T_180():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a16fdec22fb412c8aca0c79119e3651b0',1,'T_180():&#160;tetrix_OLD.c']]],
+  ['t_5f270_2',['T_270',['../tetrix_8c.html#a3616df84af6179d88eaac1e6344007ab',1,'T_270():&#160;tetrix.c'],['../tetrix__2_8c.html#a3616df84af6179d88eaac1e6344007ab',1,'T_270():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a3616df84af6179d88eaac1e6344007ab',1,'T_270():&#160;tetrix_OLD.c']]],
+  ['t_5f90_3',['T_90',['../tetrix_8c.html#a5c83b710aff3e681d3db4c312c6a0b46',1,'T_90():&#160;tetrix.c'],['../tetrix__2_8c.html#a5c83b710aff3e681d3db4c312c6a0b46',1,'T_90():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a5c83b710aff3e681d3db4c312c6a0b46',1,'T_90():&#160;tetrix_OLD.c']]],
+  ['t_5ffree_4',['T_free',['../tetrix_8c.html#afa13dff6dc6c64568b7d13a46631815e',1,'T_free():&#160;tetrix.c'],['../tetrix__2_8c.html#afa13dff6dc6c64568b7d13a46631815e',1,'T_free():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#afa13dff6dc6c64568b7d13a46631815e',1,'T_free():&#160;tetrix_OLD.c']]],
+  ['test_5',['test',['../tetrix_8c.html#a96526f8643da2c5248062e5d2832f069',1,'test(campo_di_gioco piano, int RIGHE, int COLONNE):&#160;tetrix.c'],['../tetrix__2_8c.html#a96526f8643da2c5248062e5d2832f069',1,'test(campo_di_gioco piano, int RIGHE, int COLONNE):&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a96526f8643da2c5248062e5d2832f069',1,'test(campo_di_gioco piano, int RIGHE, int COLONNE):&#160;tetrix_OLD.c']]],
+  ['test_5fcase_2etxt_6',['test_case.txt',['../test__case_8txt.html',1,'']]],
+  ['test_5finverti_7',['TEST_INVERTI',['../tetrix_8c.html#adf818de7cbdc4a4cf738bfbfe3be289c',1,'TEST_INVERTI(campo_di_gioco campo_giocatore, int RIGHE, int COLONNE):&#160;tetrix.c'],['../tetrix__2_8c.html#adf818de7cbdc4a4cf738bfbfe3be289c',1,'TEST_INVERTI(campo_di_gioco campo_giocatore, int RIGHE, int COLONNE):&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#adf818de7cbdc4a4cf738bfbfe3be289c',1,'TEST_INVERTI(campo_di_gioco campo_giocatore, int RIGHE, int COLONNE):&#160;tetrix_OLD.c']]],
+  ['tetrix_2ec_8',['tetrix.c',['../tetrix_8c.html',1,'']]],
+  ['tetrix_5f2_2ec_9',['tetrix_2.c',['../tetrix__2_8c.html',1,'']]],
+  ['tetrix_5fold_2ec_10',['tetrix_OLD.c',['../tetrix___o_l_d_8c.html',1,'']]],
+  ['true_11',['TRUE',['../tetrix_8c.html#a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839',1,'TRUE():&#160;tetrix.c'],['../tetrix__2_8c.html#a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839',1,'TRUE():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839',1,'TRUE():&#160;tetrix_OLD.c']]]
 ];
