@@ -20,22 +20,22 @@
 const int RIGHE = row;
 const int COLONNE = column;
 
-/** @enum giocatori Definisco una variabile per il numero di giocatori*/
+/** @brief Definisco un enumeratore per il numero di giocatori*/
 typedef enum giocatori
 {
-    SINGLE_PLAYER = 1,
-    MULTI_PLAYER = 2,
-    NOT_SELECTED = -99
+    SINGLE_PLAYER = 1,  /**< Quando la modalità selezionata è giocatore singolo*/
+    MULTI_PLAYER = 2,   /**< Quando la modalità selezionata è multigiocatore*/
+    NOT_SELECTED = -99  /**< Quando la modalità non è stata selezionata*/
 } giocatori_t;
 
-/** @enum riquadro casella del piano di gioco che può essere occupato o meno.*/
+/** @brief  Definisco un enumeratore per sapere lo stato della casella del piano di gioco*/
 typedef enum riquadro
 { 
-    VUOTO,
-    OCCUPATO
+    VUOTO, 		/**< se la casella non contiene un pezzo di tetramino*/
+    OCCUPATO 	/**< quando la casella contiene un pezzo del tetramino*/
 } riquadro_t;
 
-/** @brief nota: campo_di_gioco e' un puntatore che punt al campo di gioco */
+/** @brief campo_di_gioco e' un puntatore che punt al campo di gioco */
 typedef riquadro_t *campo_di_gioco;
 
 typedef enum bool_e
