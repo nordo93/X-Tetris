@@ -56,14 +56,14 @@
 int I_free = 20; /*Indico quanti pezzi sono disponibili di I*/
 int I_[size]={1,1,1,1};
 int I_180[size]={7,0,0,0};
-
+/**@{*/ 
 /** @brief Differenti versioni del tetramino J
 * @param J_free quanti tetramino J sono disponibili
 * @param J_ tetramino J in posizione base
 * @param J_90 tetramino J ruotata di 90 gradi
 * @param J_180 tetramino J ruotata di 180 gradi
 * @param J_270 tetramino J ruotata di 270 gradi
-*/
+/**@}*/
 int J_free = 20;
 int J_[size]={2,1,1,0};
 int J_90[size]={3,5,0,0};
