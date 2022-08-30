@@ -57,7 +57,7 @@ cosa vogliono dire i numeri all'interno degli array dei tetramini:\n
 I_[4] = {1,1,1,1}
 vuol dire che il tetramino è in posizione 0 e occupa un solo blocco in altezza per ogni colonna
 \n
-_ _ _ _
+
 X X X X
 0 1 2 3
 
