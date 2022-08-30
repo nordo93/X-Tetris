@@ -311,3 +311,36 @@ Scelgli la rotazione per questo tetramino l:
  X  X  X  _
  6  7  8  9
 Scelta: 4
+
+TEST CASE 7 , inserisco j a 90 gradi , quando è presente un tetramino 
+X  _  X  _  _  _  _  _  _  _
+_  _  X  _  X  X  X  X  _  _ 
+10 11 12 13 14 15 16 17 18 19
+
+Menu
+
+Scelta: 1
+
+colonna dove inserire il tetramini:
+Scelta: 13
+
+Scegli un tetramino
+Scelta: j
+
+Scelgli la rotazione per questo tetramino j:
+1. nessuna rotazione
+2. ruotare di 90 gradi
+3. ruotare di 180 gradi
+4. ruotare di 270 gradi
+-ANTEPRIMA scelta 1-
+ _  _  _  _
+ _  _  _  _
+ X  _  _  _
+ X  X  X  _
+ 13  14  15  16
+Scelta: 2
+
+Risultato:
+X  _  X  X  X  _  _  _  _  _ 
+_  _  X  X  X  X  X  X  _  _  
+10 11 12 13 14 15 16 17 18 19
