@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['verifica_5foccupata_0',['verifica_occupata',['../tetrix_8c.html#a8a0b7e3b055bd38e37aa36052cbc1609',1,'tetrix.c']]],
-  ['verifica_5fuscita_1',['verifica_uscita',['../tetrix_8c.html#a2444104362cf4314a0b97fa2eaf0d58e',1,'tetrix.c']]],
-  ['visualizza_5fpezzi_5fdisponibili_2',['Visualizza_pezzi_disponibili',['../tetrix_8c.html#aa3bc71145727910fda60fad153a740bd',1,'tetrix.c']]],
-  ['vuoto_3',['VUOTO',['../tetrix_8c.html#aacae98a513bf46f84ca1f3554bae431baf9428c94346b50d578b820a28ca79855',1,'tetrix.c']]]
+  ['z_5f_0',['Z_',['../tetramini_8h.html#a5c3eaa3f69b2e26e70acd0793f79b03f',1,'tetramini.h']]],
+  ['z_5f90_1',['Z_90',['../tetramini_8h.html#ac66a4244f70d4b26a6571c38fb877310',1,'tetramini.h']]],
+  ['z_5ffree_2',['Z_free',['../tetramini_8h.html#a260e6987b9e21f6b802bee83d8b5db7e',1,'tetramini.h']]]
 ];
