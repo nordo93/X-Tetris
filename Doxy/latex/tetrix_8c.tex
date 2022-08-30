@@ -101,14 +101,29 @@ int \mbox{\hyperlink{tetrix_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+const int \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}} = \mbox{\hyperlink{tetrix_8c_aece949dcac4360a3141f73eaec44e155}{row}}
+\begin{DoxyCompactList}\small\item\em Definisco delle costanti per il numero di righe e colonne. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}} = \mbox{\hyperlink{tetrix_8c_ac5a3a1569e5f4d986ec6ece10286c08a}{column}}
+\item 
+\mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}} \mbox{\hyperlink{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}{Perdita\+\_\+uscita\+\_\+campo}} = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}}
+\begin{DoxyCompactList}\small\item\em Definisco variabili globali per l\textquotesingle{}errore di uscire dalle righe colonne. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}} \mbox{\hyperlink{tetrix_8c_a051ce5d94ece76dfba76cd03264c2486}{inverti\+\_\+campo}} = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}}
+\begin{DoxyCompactList}\small\item\em Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
 int \mbox{\hyperlink{tetrix_8c_ad6fc8f02b9b9dd16cbb053cb94d9d75d}{I\+\_\+free}} = 20
-\begin{DoxyCompactList}\small\item\em Differenti versioni del tetramino I. \end{DoxyCompactList}\item 
+\item 
 int \mbox{\hyperlink{tetrix_8c_a486a6c33397876c16f1eed6ee6db9a6e}{I\+\_\+}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{1,1,1,1\}
 \item 
 int \mbox{\hyperlink{tetrix_8c_a70bb3debf589d0e6cb018c995b9b55b7}{I\+\_\+180}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{7,0,0,0\}
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{tetrix_8c_abddddcaa391b55ca521a2dd642ecd67c}{J\+\_\+free}} = 20
-\begin{DoxyCompactList}\small\item\em Differenti versioni del tetramino J. \end{DoxyCompactList}\item 
+\item 
 int \mbox{\hyperlink{tetrix_8c_ad87da70e163fd593f54677543e410206}{J\+\_\+}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{2,1,1,0\}
 \item 
 int \mbox{\hyperlink{tetrix_8c_acc13d1df0c48a8feb07a5533efd2a8ff}{J\+\_\+90}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{3,5,0,0\}
@@ -116,26 +131,42 @@ int \mbox{\hyperlink{tetrix_8c_acc13d1df0c48a8feb07a5533efd2a8ff}{J\+\_\+90}} \m
 int \mbox{\hyperlink{tetrix_8c_ad5f4569ab3b3091256882b93d2beae7c}{J\+\_\+180}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{4,4,2,0\}
 \item 
 int \mbox{\hyperlink{tetrix_8c_a68d167cb3b6f4e8adbaa34c220e5d91a}{J\+\_\+270}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{1,3,0,0\}
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{tetrix_8c_a62a7aff152eb2b680f14719a0946b0cd}{L\+\_\+free}} = 20
 \item 
 int \mbox{\hyperlink{tetrix_8c_a4e55fdb7954a23a3d4225301663b5e42}{L\+\_\+}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{1,1,2,0\}
 \item 
 int \mbox{\hyperlink{tetrix_8c_a71b2c3c341368dba402df00349b08f71}{L\+\_\+90}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{3,1,0,0\}
-\begin{DoxyCompactList}\small\item\em tetramino L ruotata di 90 gradi \end{DoxyCompactList}\item 
+\item 
 int \mbox{\hyperlink{tetrix_8c_a9506433791b39d653329d2e43b3509ba}{L\+\_\+180}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{2,4,4,0\}
-\begin{DoxyCompactList}\small\item\em tetramino L ruotata di 180 gradi \end{DoxyCompactList}\item 
+\item 
 int \mbox{\hyperlink{tetrix_8c_a896b7db002fccfe1fe4f9fc7c219a775}{L\+\_\+270}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{5,3,0,0\}
-\begin{DoxyCompactList}\small\item\em tetramino L ruotata di 270 gradi \end{DoxyCompactList}\item 
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
 int \mbox{\hyperlink{tetrix_8c_a6bc5b256b323182ec7dde63f1e11f7f7}{O\+\_\+free}} = 20
 \item 
 int \mbox{\hyperlink{tetrix_8c_ababe806de57c7e08be051e69f74aa3be}{O\+\_\+}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{2,2,0,0\}
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{tetrix_8c_aa8602cf3d17bdad9ea477d87502198f1}{S\+\_\+free}} = 20
 \item 
 int \mbox{\hyperlink{tetrix_8c_a6f6ed46d5320ee68c879f776fc6633f9}{S\+\_\+}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{1,2,4,0\}
 \item 
 int \mbox{\hyperlink{tetrix_8c_ad64bd433759655e26f3b0d937d2576ec}{S\+\_\+90}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{6,2,0,0\}
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{tetrix_8c_afa13dff6dc6c64568b7d13a46631815e}{T\+\_\+free}} = 20
 \item 
@@ -146,21 +177,18 @@ int \mbox{\hyperlink{tetrix_8c_a5c83b710aff3e681d3db4c312c6a0b46}{T\+\_\+90}} \m
 int \mbox{\hyperlink{tetrix_8c_a16fdec22fb412c8aca0c79119e3651b0}{T\+\_\+180}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{4,2,4,0\}
 \item 
 int \mbox{\hyperlink{tetrix_8c_a3616df84af6179d88eaac1e6344007ab}{T\+\_\+270}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{4,3,0,0\}
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{tetrix_8c_a260e6987b9e21f6b802bee83d8b5db7e}{Z\+\_\+free}} = 20
 \item 
 int \mbox{\hyperlink{tetrix_8c_a5c3eaa3f69b2e26e70acd0793f79b03f}{Z\+\_\+}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{4,2,1,0\}
 \item 
 int \mbox{\hyperlink{tetrix_8c_ac66a4244f70d4b26a6571c38fb877310}{Z\+\_\+90}} \mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{2,6,0,0\}
-\item 
-const int \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}} = \mbox{\hyperlink{tetrix_8c_aece949dcac4360a3141f73eaec44e155}{row}}
-\begin{DoxyCompactList}\small\item\em Definisco delle costanti per il numero di righe e colonne. \end{DoxyCompactList}\item 
-const int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}} = \mbox{\hyperlink{tetrix_8c_ac5a3a1569e5f4d986ec6ece10286c08a}{column}}
-\item 
-\mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}} \mbox{\hyperlink{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}{Perdita\+\_\+uscita\+\_\+campo}} = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}}
-\begin{DoxyCompactList}\small\item\em Definisco variabili globali per l\textquotesingle{}errore di uscire dalle righe colonne. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}} \mbox{\hyperlink{tetrix_8c_a051ce5d94ece76dfba76cd03264c2486}{inverti\+\_\+campo}} = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}}
-\begin{DoxyCompactList}\small\item\em Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
+
 
 
 \doxysubsection{Detailed Description}
@@ -577,23 +605,37 @@ if($\ast$p == 1 \&\& sottrazione\+\_\+riga == 0)
 \doxysubsubsection{\texorpdfstring{I\_}{I\_}}
 {\footnotesize\ttfamily int I\+\_\+\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{1,1,1,1\}}
 
+Differenti versioni del tetramino I 
+\begin{DoxyParams}{Parameters}
+{\em I\+\_\+free} & quanti tetramino I sono disponibili \\
+\hline
+{\em I\+\_\+} & tetramino i in posizione base \\
+\hline
+{\em I\+\_\+180} & tetramino i in posizione verticale \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_a70bb3debf589d0e6cb018c995b9b55b7}\label{tetrix_8c_a70bb3debf589d0e6cb018c995b9b55b7}} 
 \index{tetrix.c@{tetrix.c}!I\_180@{I\_180}}
 \index{I\_180@{I\_180}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{I\_180}{I\_180}}
 {\footnotesize\ttfamily int I\+\_\+180\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{7,0,0,0\}}
 
+Differenti versioni del tetramino I 
+\begin{DoxyParams}{Parameters}
+{\em I\+\_\+free} & quanti tetramino I sono disponibili \\
+\hline
+{\em I\+\_\+} & tetramino i in posizione base \\
+\hline
+{\em I\+\_\+180} & tetramino i in posizione verticale \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_ad6fc8f02b9b9dd16cbb053cb94d9d75d}\label{tetrix_8c_ad6fc8f02b9b9dd16cbb053cb94d9d75d}} 
 \index{tetrix.c@{tetrix.c}!I\_free@{I\_free}}
 \index{I\_free@{I\_free}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{I\_free}{I\_free}}
 {\footnotesize\ttfamily int I\+\_\+free = 20}
 
-
-
-Differenti versioni del tetramino I. 
-
-
+Differenti versioni del tetramino I 
 \begin{DoxyParams}{Parameters}
 {\em I\+\_\+free} & quanti tetramino I sono disponibili \\
 \hline
@@ -618,35 +660,83 @@ Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer.
 \doxysubsubsection{\texorpdfstring{J\_}{J\_}}
 {\footnotesize\ttfamily int J\+\_\+\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{2,1,1,0\}}
 
+Differenti versioni del tetramino J 
+\begin{DoxyParams}{Parameters}
+{\em J\+\_\+free} & quanti tetramino J sono disponibili \\
+\hline
+{\em J\+\_\+} & tetramino J in posizione base \\
+\hline
+{\em J\+\_\+90} & tetramino J ruotata di 90 gradi \\
+\hline
+{\em J\+\_\+180} & tetramino J ruotata di 180 gradi \\
+\hline
+{\em J\+\_\+270} & tetramino J ruotata di 270 gradi \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_ad5f4569ab3b3091256882b93d2beae7c}\label{tetrix_8c_ad5f4569ab3b3091256882b93d2beae7c}} 
 \index{tetrix.c@{tetrix.c}!J\_180@{J\_180}}
 \index{J\_180@{J\_180}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{J\_180}{J\_180}}
 {\footnotesize\ttfamily int J\+\_\+180\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{4,4,2,0\}}
 
+Differenti versioni del tetramino J 
+\begin{DoxyParams}{Parameters}
+{\em J\+\_\+free} & quanti tetramino J sono disponibili \\
+\hline
+{\em J\+\_\+} & tetramino J in posizione base \\
+\hline
+{\em J\+\_\+90} & tetramino J ruotata di 90 gradi \\
+\hline
+{\em J\+\_\+180} & tetramino J ruotata di 180 gradi \\
+\hline
+{\em J\+\_\+270} & tetramino J ruotata di 270 gradi \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_a68d167cb3b6f4e8adbaa34c220e5d91a}\label{tetrix_8c_a68d167cb3b6f4e8adbaa34c220e5d91a}} 
 \index{tetrix.c@{tetrix.c}!J\_270@{J\_270}}
 \index{J\_270@{J\_270}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{J\_270}{J\_270}}
 {\footnotesize\ttfamily int J\+\_\+270\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{1,3,0,0\}}
 
+Differenti versioni del tetramino J 
+\begin{DoxyParams}{Parameters}
+{\em J\+\_\+free} & quanti tetramino J sono disponibili \\
+\hline
+{\em J\+\_\+} & tetramino J in posizione base \\
+\hline
+{\em J\+\_\+90} & tetramino J ruotata di 90 gradi \\
+\hline
+{\em J\+\_\+180} & tetramino J ruotata di 180 gradi \\
+\hline
+{\em J\+\_\+270} & tetramino J ruotata di 270 gradi \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_acc13d1df0c48a8feb07a5533efd2a8ff}\label{tetrix_8c_acc13d1df0c48a8feb07a5533efd2a8ff}} 
 \index{tetrix.c@{tetrix.c}!J\_90@{J\_90}}
 \index{J\_90@{J\_90}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{J\_90}{J\_90}}
 {\footnotesize\ttfamily int J\+\_\+90\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{3,5,0,0\}}
 
+Differenti versioni del tetramino J 
+\begin{DoxyParams}{Parameters}
+{\em J\+\_\+free} & quanti tetramino J sono disponibili \\
+\hline
+{\em J\+\_\+} & tetramino J in posizione base \\
+\hline
+{\em J\+\_\+90} & tetramino J ruotata di 90 gradi \\
+\hline
+{\em J\+\_\+180} & tetramino J ruotata di 180 gradi \\
+\hline
+{\em J\+\_\+270} & tetramino J ruotata di 270 gradi \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_abddddcaa391b55ca521a2dd642ecd67c}\label{tetrix_8c_abddddcaa391b55ca521a2dd642ecd67c}} 
 \index{tetrix.c@{tetrix.c}!J\_free@{J\_free}}
 \index{J\_free@{J\_free}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{J\_free}{J\_free}}
 {\footnotesize\ttfamily int J\+\_\+free = 20}
 
-
-
-Differenti versioni del tetramino J. 
-
-
+Differenti versioni del tetramino J 
 \begin{DoxyParams}{Parameters}
 {\em J\+\_\+free} & quanti tetramino J sono disponibili \\
 \hline
@@ -665,9 +755,17 @@ Differenti versioni del tetramino J.
 \doxysubsubsection{\texorpdfstring{L\_}{L\_}}
 {\footnotesize\ttfamily int L\+\_\+\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{1,1,2,0\}}
 
-
+Differenti versioni del tetramino L 
 \begin{DoxyParams}{Parameters}
+{\em L\+\_\+free} & quanti tetramino L sono disponibili \\
+\hline
 {\em L\+\_\+} & tetramino L in posizione base \\
+\hline
+{\em L\+\_\+90} & tetramino L ruotata di 90 gradi \\
+\hline
+{\em L\+\_\+180} & tetramino L ruotata di 180 gradi \\
+\hline
+{\em L\+\_\+270} & tetramino L ruotata di 270 gradi \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_a9506433791b39d653329d2e43b3509ba}\label{tetrix_8c_a9506433791b39d653329d2e43b3509ba}} 
@@ -676,13 +774,17 @@ Differenti versioni del tetramino J.
 \doxysubsubsection{\texorpdfstring{L\_180}{L\_180}}
 {\footnotesize\ttfamily int L\+\_\+180\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{2,4,4,0\}}
 
-
-
-tetramino L ruotata di 180 gradi 
-
-
+Differenti versioni del tetramino L 
 \begin{DoxyParams}{Parameters}
-{\em L\+\_\+180} & \\
+{\em L\+\_\+free} & quanti tetramino L sono disponibili \\
+\hline
+{\em L\+\_\+} & tetramino L in posizione base \\
+\hline
+{\em L\+\_\+90} & tetramino L ruotata di 90 gradi \\
+\hline
+{\em L\+\_\+180} & tetramino L ruotata di 180 gradi \\
+\hline
+{\em L\+\_\+270} & tetramino L ruotata di 270 gradi \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_a896b7db002fccfe1fe4f9fc7c219a775}\label{tetrix_8c_a896b7db002fccfe1fe4f9fc7c219a775}} 
@@ -691,13 +793,17 @@ tetramino L ruotata di 180 gradi
 \doxysubsubsection{\texorpdfstring{L\_270}{L\_270}}
 {\footnotesize\ttfamily int L\+\_\+270\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{5,3,0,0\}}
 
-
-
-tetramino L ruotata di 270 gradi 
-
-
+Differenti versioni del tetramino L 
 \begin{DoxyParams}{Parameters}
-{\em L\+\_\+270} & \\
+{\em L\+\_\+free} & quanti tetramino L sono disponibili \\
+\hline
+{\em L\+\_\+} & tetramino L in posizione base \\
+\hline
+{\em L\+\_\+90} & tetramino L ruotata di 90 gradi \\
+\hline
+{\em L\+\_\+180} & tetramino L ruotata di 180 gradi \\
+\hline
+{\em L\+\_\+270} & tetramino L ruotata di 270 gradi \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_a71b2c3c341368dba402df00349b08f71}\label{tetrix_8c_a71b2c3c341368dba402df00349b08f71}} 
@@ -706,13 +812,17 @@ tetramino L ruotata di 270 gradi
 \doxysubsubsection{\texorpdfstring{L\_90}{L\_90}}
 {\footnotesize\ttfamily int L\+\_\+90\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{3,1,0,0\}}
 
-
-
-tetramino L ruotata di 90 gradi 
-
-
+Differenti versioni del tetramino L 
 \begin{DoxyParams}{Parameters}
-{\em L\+\_\+90} & \\
+{\em L\+\_\+free} & quanti tetramino L sono disponibili \\
+\hline
+{\em L\+\_\+} & tetramino L in posizione base \\
+\hline
+{\em L\+\_\+90} & tetramino L ruotata di 90 gradi \\
+\hline
+{\em L\+\_\+180} & tetramino L ruotata di 180 gradi \\
+\hline
+{\em L\+\_\+270} & tetramino L ruotata di 270 gradi \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_a62a7aff152eb2b680f14719a0946b0cd}\label{tetrix_8c_a62a7aff152eb2b680f14719a0946b0cd}} 
@@ -721,9 +831,17 @@ tetramino L ruotata di 90 gradi
 \doxysubsubsection{\texorpdfstring{L\_free}{L\_free}}
 {\footnotesize\ttfamily int L\+\_\+free = 20}
 
-
+Differenti versioni del tetramino L 
 \begin{DoxyParams}{Parameters}
 {\em L\+\_\+free} & quanti tetramino L sono disponibili \\
+\hline
+{\em L\+\_\+} & tetramino L in posizione base \\
+\hline
+{\em L\+\_\+90} & tetramino L ruotata di 90 gradi \\
+\hline
+{\em L\+\_\+180} & tetramino L ruotata di 180 gradi \\
+\hline
+{\em L\+\_\+270} & tetramino L ruotata di 270 gradi \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_ababe806de57c7e08be051e69f74aa3be}\label{tetrix_8c_ababe806de57c7e08be051e69f74aa3be}} 
@@ -732,6 +850,13 @@ tetramino L ruotata di 90 gradi
 \doxysubsubsection{\texorpdfstring{O\_}{O\_}}
 {\footnotesize\ttfamily int O\+\_\+\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{2,2,0,0\}}
 
+Differenti versioni del tetramino O. 
+\begin{DoxyParams}{Parameters}
+{\em O\+\_\+free} & Tetramini O disponibili \\
+\hline
+{\em O\+\_\+} & tetramino O in posizione base \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_a6bc5b256b323182ec7dde63f1e11f7f7}\label{tetrix_8c_a6bc5b256b323182ec7dde63f1e11f7f7}} 
 \index{tetrix.c@{tetrix.c}!O\_free@{O\_free}}
 \index{O\_free@{O\_free}!tetrix.c@{tetrix.c}}
@@ -740,7 +865,9 @@ tetramino L ruotata di 90 gradi
 
 Differenti versioni del tetramino O. 
 \begin{DoxyParams}{Parameters}
-{\em O\+\_\+free,O\+\_\+} & Tetramini O disponibili, e O\+\_\+ tetramino O in posizione base \\
+{\em O\+\_\+free} & Tetramini O disponibili \\
+\hline
+{\em O\+\_\+} & tetramino O in posizione base \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}\label{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}} 
@@ -769,63 +896,91 @@ Definisco delle costanti per il numero di righe e colonne.
 \doxysubsubsection{\texorpdfstring{S\_}{S\_}}
 {\footnotesize\ttfamily int S\+\_\+\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{1,2,4,0\}}
 
+Differenti versioni del tetramino S. 
+\begin{DoxyParams}{Parameters}
+{\em S\+\_\+free} & Tetramini S disponibili \\
+\hline
+{\em S\+\_\+} & tetramino S in posizione base \\
+\hline
+{\em S\+\_\+90} & tetramino S ruotata di 90 gradi \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_ad64bd433759655e26f3b0d937d2576ec}\label{tetrix_8c_ad64bd433759655e26f3b0d937d2576ec}} 
 \index{tetrix.c@{tetrix.c}!S\_90@{S\_90}}
 \index{S\_90@{S\_90}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{S\_90}{S\_90}}
 {\footnotesize\ttfamily int S\+\_\+90\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{6,2,0,0\}}
 
+Differenti versioni del tetramino S. 
+\begin{DoxyParams}{Parameters}
+{\em S\+\_\+free} & Tetramini S disponibili \\
+\hline
+{\em S\+\_\+} & tetramino S in posizione base \\
+\hline
+{\em S\+\_\+90} & tetramino S ruotata di 90 gradi \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_aa8602cf3d17bdad9ea477d87502198f1}\label{tetrix_8c_aa8602cf3d17bdad9ea477d87502198f1}} 
 \index{tetrix.c@{tetrix.c}!S\_free@{S\_free}}
 \index{S\_free@{S\_free}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{S\_free}{S\_free}}
 {\footnotesize\ttfamily int S\+\_\+free = 20}
 
+Differenti versioni del tetramino S. 
+\begin{DoxyParams}{Parameters}
+{\em S\+\_\+free} & Tetramini S disponibili \\
+\hline
+{\em S\+\_\+} & tetramino S in posizione base \\
+\hline
+{\em S\+\_\+90} & tetramino S ruotata di 90 gradi \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_aa44c256536afa00286b5506d5f0823e2}\label{tetrix_8c_aa44c256536afa00286b5506d5f0823e2}} 
 \index{tetrix.c@{tetrix.c}!T\_@{T\_}}
 \index{T\_@{T\_}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{T\_}{T\_}}
 {\footnotesize\ttfamily int T\+\_\+\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{1,2,1,0\}}
 
-\mbox{\Hypertarget{tetrix_8c_a16fdec22fb412c8aca0c79119e3651b0}\label{tetrix_8c_a16fdec22fb412c8aca0c79119e3651b0}} 
+Differenti versioni del tetramino T \mbox{\Hypertarget{tetrix_8c_a16fdec22fb412c8aca0c79119e3651b0}\label{tetrix_8c_a16fdec22fb412c8aca0c79119e3651b0}} 
 \index{tetrix.c@{tetrix.c}!T\_180@{T\_180}}
 \index{T\_180@{T\_180}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{T\_180}{T\_180}}
 {\footnotesize\ttfamily int T\+\_\+180\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{4,2,4,0\}}
 
-\mbox{\Hypertarget{tetrix_8c_a3616df84af6179d88eaac1e6344007ab}\label{tetrix_8c_a3616df84af6179d88eaac1e6344007ab}} 
+Differenti versioni del tetramino T \mbox{\Hypertarget{tetrix_8c_a3616df84af6179d88eaac1e6344007ab}\label{tetrix_8c_a3616df84af6179d88eaac1e6344007ab}} 
 \index{tetrix.c@{tetrix.c}!T\_270@{T\_270}}
 \index{T\_270@{T\_270}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{T\_270}{T\_270}}
 {\footnotesize\ttfamily int T\+\_\+270\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{4,3,0,0\}}
 
-\mbox{\Hypertarget{tetrix_8c_a5c83b710aff3e681d3db4c312c6a0b46}\label{tetrix_8c_a5c83b710aff3e681d3db4c312c6a0b46}} 
+Differenti versioni del tetramino T \mbox{\Hypertarget{tetrix_8c_a5c83b710aff3e681d3db4c312c6a0b46}\label{tetrix_8c_a5c83b710aff3e681d3db4c312c6a0b46}} 
 \index{tetrix.c@{tetrix.c}!T\_90@{T\_90}}
 \index{T\_90@{T\_90}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{T\_90}{T\_90}}
 {\footnotesize\ttfamily int T\+\_\+90\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{3,4,0,0\}}
 
-\mbox{\Hypertarget{tetrix_8c_afa13dff6dc6c64568b7d13a46631815e}\label{tetrix_8c_afa13dff6dc6c64568b7d13a46631815e}} 
+Differenti versioni del tetramino T \mbox{\Hypertarget{tetrix_8c_afa13dff6dc6c64568b7d13a46631815e}\label{tetrix_8c_afa13dff6dc6c64568b7d13a46631815e}} 
 \index{tetrix.c@{tetrix.c}!T\_free@{T\_free}}
 \index{T\_free@{T\_free}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{T\_free}{T\_free}}
 {\footnotesize\ttfamily int T\+\_\+free = 20}
 
-\mbox{\Hypertarget{tetrix_8c_a5c3eaa3f69b2e26e70acd0793f79b03f}\label{tetrix_8c_a5c3eaa3f69b2e26e70acd0793f79b03f}} 
+Differenti versioni del tetramino T \mbox{\Hypertarget{tetrix_8c_a5c3eaa3f69b2e26e70acd0793f79b03f}\label{tetrix_8c_a5c3eaa3f69b2e26e70acd0793f79b03f}} 
 \index{tetrix.c@{tetrix.c}!Z\_@{Z\_}}
 \index{Z\_@{Z\_}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{Z\_}{Z\_}}
 {\footnotesize\ttfamily int Z\+\_\+\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{4,2,1,0\}}
 
-\mbox{\Hypertarget{tetrix_8c_ac66a4244f70d4b26a6571c38fb877310}\label{tetrix_8c_ac66a4244f70d4b26a6571c38fb877310}} 
+Differenti versioni del tetramino Z \mbox{\Hypertarget{tetrix_8c_ac66a4244f70d4b26a6571c38fb877310}\label{tetrix_8c_ac66a4244f70d4b26a6571c38fb877310}} 
 \index{tetrix.c@{tetrix.c}!Z\_90@{Z\_90}}
 \index{Z\_90@{Z\_90}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{Z\_90}{Z\_90}}
 {\footnotesize\ttfamily int Z\+\_\+90\mbox{[}\mbox{\hyperlink{tetrix_8c_aa23c661441688350614bd6a350d2b6ff}{size}}\mbox{]} =\{2,6,0,0\}}
 
-\mbox{\Hypertarget{tetrix_8c_a260e6987b9e21f6b802bee83d8b5db7e}\label{tetrix_8c_a260e6987b9e21f6b802bee83d8b5db7e}} 
+Differenti versioni del tetramino Z \mbox{\Hypertarget{tetrix_8c_a260e6987b9e21f6b802bee83d8b5db7e}\label{tetrix_8c_a260e6987b9e21f6b802bee83d8b5db7e}} 
 \index{tetrix.c@{tetrix.c}!Z\_free@{Z\_free}}
 \index{Z\_free@{Z\_free}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{Z\_free}{Z\_free}}
 {\footnotesize\ttfamily int Z\+\_\+free = 20}
 
+Differenti versioni del tetramino Z 
