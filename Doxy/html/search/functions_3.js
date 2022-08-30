@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['raddoppia_5ftetramini_0',['raddoppia_tetramini',['../tetrix_8c.html#a3db906a4d562c2e7b2e92b92849943ca',1,'raddoppia_tetramini():&#160;tetrix.c'],['../tetrix__2_8c.html#a3db906a4d562c2e7b2e92b92849943ca',1,'raddoppia_tetramini():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a3db906a4d562c2e7b2e92b92849943ca',1,'raddoppia_tetramini():&#160;tetrix_OLD.c']]],
-  ['rimuovi_5friga_1',['rimuovi_riga',['../tetrix_8c.html#a3fd5c682f4d1f903342251a529d0ee0e',1,'rimuovi_riga(campo_di_gioco piano, int riga_punto, int colonna):&#160;tetrix.c'],['../tetrix__2_8c.html#a3fd5c682f4d1f903342251a529d0ee0e',1,'rimuovi_riga(campo_di_gioco piano, int riga_punto, int colonna):&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a3fd5c682f4d1f903342251a529d0ee0e',1,'rimuovi_riga(campo_di_gioco piano, int riga_punto, int colonna):&#160;tetrix_OLD.c']]],
-  ['rotazione_2',['rotazione',['../tetrix_8c.html#ac2497028945dde5abdc42fdbb5ecf2f2',1,'rotazione(char code, int colonna_scelta_dal_giocatore):&#160;tetrix.c'],['../tetrix__2_8c.html#ac2497028945dde5abdc42fdbb5ecf2f2',1,'rotazione(char code, int colonna_scelta_dal_giocatore):&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a9b06a0886ac03e59e886c6266da9508f',1,'rotazione(char code):&#160;tetrix_OLD.c']]]
+  ['main_0',['main',['../tetrix___one_file_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'tetrix_OneFile.c']]]
 ];

@@ -6,7 +6,7 @@
  * @date 2022-08-19
  * 
  * @copyright Copyright (c) 2022
- * 
+ * TEST 2
  */
 
 #include <stdio.h>
@@ -48,49 +48,76 @@
  * # 7 = 4 blocchi sovrapposti
  */
 
-/* Differenti versioni del tetramino I */
+/**@{*//** Differenti versioni del tetramino I
+* @param I_free quanti tetramino I sono disponibili
+* @param I_ tetramino i in posizione base
+* @param I_180 tetramino i in posizione verticale
+*/
 int I_free = 20; /*Indico quanti pezzi sono disponibili di I*/
 int I_[size]={1,1,1,1};
-int I_180[size]={7,0,0,0};
+int I_180[size]={7,0,0,0};/**@}*/
 
-/* Differenti versioni del tetramino J */
+/**@{*//** Differenti versioni del tetramino J
+* @param J_free quanti tetramino J sono disponibili
+* @param J_ tetramino J in posizione base
+* @param J_90 tetramino J ruotata di 90 gradi
+* @param J_180 tetramino J ruotata di 180 gradi
+* @param J_270 tetramino J ruotata di 270 gradi*/
 int J_free = 20;
 int J_[size]={2,1,1,0};
 int J_90[size]={3,5,0,0};
 int J_180[size]={4,4,2,0};
-int J_270[size]={1,3,0,0};
+int J_270[size]={1,3,0,0};/**@}*/
 
-/* Differenti versioni del tetramino L*/
+/**@{*//** Differenti versioni del tetramino L
+ * @param L_free quanti tetramino L sono disponibili
+ * @param L_ tetramino L in posizione base 
+ * @param L_90 tetramino L ruotata di 90 gradi
+ * @param L_180 tetramino L ruotata di 180 gradi
+ * @param L_270 tetramino L ruotata di 270 gradi */
 int L_free = 20;
 int L_[size]={1,1,2,0};
 int L_90[size]={3,1,0,0};
 int L_180[size]={2,4,4,0};
-int L_270[size]={1,3,0,0};
+int L_270[size]={5,3,0,0};/**@}*/
 
-/* Differenti versioni del tetramino O */
+/**@{*//** Differenti versioni del tetramino O.
+ * @param O_free Tetramini O disponibili 
+ * @param O_ tetramino O in posizione base*/
 int O_free = 20;
-int O_[size]={2,2,0,0};
+int O_[size]={2,2,0,0};/**@}*/
 
-/* Differenti versioni del tetramino S */
+/**@{*//** Differenti versioni del tetramino S.
+ * @param S_free Tetramini S disponibili 
+ * @param S_ tetramino S in posizione base
+ * @param S_90 tetramino S ruotata di 90 gradi*/
 int S_free = 20;
 int S_[size]={1,2,4,0};
-int S_90[size]={6,2,0,0};
+int S_90[size]={6,2,0,0};/**@}*/
 
-/* Differenti versioni del tetramino T */
+/**@{*//** Differenti versioni del tetramino T
+ * @param T_free Tetramini T disponibili
+ * @param T_ tetramino T in posizione base
+ * @param T_90 tetramino T ruotata di 90 gradi
+ * @param T_180 tetramino T ruotata di 180 gradi
+ * @param T_270 tetramino T ruotata di 270 gradi */
 int T_free = 20;
 int T_[size]={1,2,1,0};
 int T_90[size]={3,4,0,0};
 int T_180[size]={4,2,4,0};
-int T_270[size]={4,3,0,0};
+int T_270[size]={4,3,0,0};/**@}*/
 
-/* Differenti versioni del tetramino Z */
+/**@{*//** Differenti versioni del tetramino Z.
+ * @param Z_free Tetramini Z disponibili 
+ * @param Z_ tetramino Z in posizione base
+ * @param Z_90 tetramino Z ruotata di 90 gradi*/
 int Z_free = 20;
 int Z_[size]={4,2,1,0};
-int Z_90[size]={2,6,0,0};
+int Z_90[size]={2,6,0,0};/**@}*/
 
 
 
-/*Definisco una variabile per il numero di giocatori*/
+/** @enum Definisco una variabile per il numero di giocatori*/
 typedef enum giocatori
 {
     SINGLE_PLAYER = 1,
@@ -98,15 +125,14 @@ typedef enum giocatori
     NOT_SELECTED = -99
 } giocatori_t;
 
-/* riquadro del piano di gioco */
+/** @enum riquadro del piano di gioco che può essere occupato o meno.*/
 typedef enum riquadro
 { 
     VUOTO,
     OCCUPATO
 } riquadro_t;
 
-/* Piano di gioco */
-/* nota: campo_di_gioco e' un puntatore */
+/** @brief nota: campo_di_gioco e' un puntatore che punt al campo di gioco */
 typedef riquadro_t *campo_di_gioco;
 
 typedef enum bool_e
@@ -120,7 +146,6 @@ const int RIGHE = row;
 const int COLONNE = column;
 
 /** @brief Definisco variabili globali per l'errore di uscire dalle righe colonne*/
-
 bool_t Perdita_uscita_campo = FALSE;
 
 /** @brief Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer */
@@ -140,11 +165,11 @@ void init(campo_di_gioco piano, int riga, int colonna) {
 }
 
 /**
- * @brief Funzione che uso per visualizzare un ateprima del tetramino scelto dal giocatore
- * 
- * @param tetramino 
+ * @brief Funzione che uso per visualizzare un ateprima del tetramino scelto dal giocatore 
+ * @param tetramino viene passato il tetramino scelto come j, l, t ecc..
+ * @param colonna_scelta_dal_giocatore la colonna selezionata dal giocatore viene passata alla funzione
  */
-void stampa_anteprima(int * tetramino){
+void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
 	
 	printf("-ANTEPRIMA scelta 1-\n");
 
@@ -201,9 +226,22 @@ void stampa_anteprima(int * tetramino){
         /*vado a capo per creare la griglia*/
         printf("\n");
         }
+        for(i = colonna_scelta_dal_giocatore; i < colonna_scelta_dal_giocatore + size; i++)
+         printf(" %d ", i);
+        printf("\n");
 }
 
-int verifica_uscita(int *p, int riga, int colonna, int contatto){
+/**
+ * @brief verifica che il tetramino inserito non superi il limite di colonne  e righe massime
+ * 
+ * @param p indica il tetramino scelto dal giocatore
+ * @param righe_rimanenti il numero di righe rimaste vuote, quindi un tetramino I in verticale non ci starà se le righe rimaneti sono solo 3
+ * @param colonna questa indica la colonna scelta dal giocatore e aumenta di valore in base a quanto occupa il tetrmaino in termini di larghezza
+ * @param contatto questo è dove il tetramino è appogiato, lo uso come valore di entrata e uscita per verificare gli errori, se il valore cambia allora il tetramino è uscito dallo spazio di gioco
+ * @return ritrona di nuovo contatto se non ci sono errori, sennò ritorna -1
+ * @attention guardare note sotto, aggiungo questa condizione perchè in caso di tetramini come l a 90 gradi il primo valore del vettore è più alto del secondo
+ */
+int verifica_uscita(int *p, int righe_rimanenti, int colonna, int contatto){
 	int i;
     int sottrazione_riga = 0;
     for(i=0; i < size; i++){
@@ -211,27 +249,26 @@ int verifica_uscita(int *p, int riga, int colonna, int contatto){
       if(*p != 0)
         colonna++;  /*se il puntatore del tetramino non è zero allora vuol dire che occupera anche la prossima colonna*/
 
-	  /**
-	   * @param Perdita_uscita_campo: quando è a TRUE indica l'uscita dal campo e il giocatore perde
-	   */
+	  /** @see @param Perdita_uscita_campo: quando è a TRUE indica l'uscita dal campo e il giocatore perde*/
       if(colonna > COLONNE || colonna < 0){
 	  Perdita_uscita_campo = TRUE;
       return -1;
 	}
 
-      if(*p == 2 || *p == 4 && sottrazione_riga == 0)
-        sottrazione_riga = 1;
-        else if(*p == 6 || *p == 5 || *p == 3)
-          sottrazione_riga = 2;
-          else if(*p == 7)
-            sottrazione_riga = 3;
-
-      p++;
+	if(*p == 1 && sottrazione_riga == 0) /** @note if(*p == 1 && sottrazione_riga == 0)*/
+	  sottrazione_riga = 1;
+      else if(*p == 2 || *p == 4 ) 
+	    sottrazione_riga = 2;
+		else if(*p == 3 || *p == 5 || *p == 6)
+		  sottrazione_riga = 3;
+		  else if(*p == 7)
+		    sottrazione_riga = 4;
+    p++;
 	}
 
-    riga = riga - sottrazione_riga; /*lo faccio alla fine del ciclo perchè un tetramino non occupa sempre 4 righe ma in base a quanto è alto*/
+    righe_rimanenti = righe_rimanenti - sottrazione_riga; /*lo faccio alla fine del ciclo perchè un tetramino non occupa sempre 4 righe ma in base a quanto è alto*/
 
-    if(riga > RIGHE || riga < 0){
+    if(righe_rimanenti > RIGHE || righe_rimanenti < 0){
 	  Perdita_uscita_campo = TRUE;
       return -1;
 	}
@@ -286,18 +323,20 @@ int contatto (campo_di_gioco piano, int scelta_colonna, int *p){
     int riga = 0; /*tengo conto della riga a cui siamo arrvati*/
 	int contatto = (RIGHE*COLONNE) - (COLONNE- scelta_colonna) + size; /*aggiungo size perchè se presente un sigolo blocco occupato a fine corsa non lo vede*/
 	bool_t found = FALSE;
+	bool_t contatto_minore = FALSE; /*Questa variabile mi serve per il caso in cui il tetramino si appoggi ma il prossimo blocco invece no*/
     /*contatto è uguale all'ultimo numero della colonna, quindi se colonna 2 allora sara 142 il numero contatto*/
-	for (c = scelta_colonna; c < contatto; ){
+	for (c = scelta_colonna; c < contatto - COLONNE; ){
 		for(i = 0; i < size ; i++){
-		  if(piano[c + i] == OCCUPATO && *p > 0){
+		  if(piano[c + i] == OCCUPATO && *p > 0 && contatto_minore == FALSE){
 		    printf("trovato contatto a : %d\n", c + i);
-        	  if(*p == 4 || *p == 6){
+        	  if(*p == 4 || *p == 6){ /*Verifico se sotto il tetramino c'è qualcosa su cui appoggiare*/
                 contatto = c;
+				
                 found = TRUE;
                 }
-      	  	    else if (*p == 5 && piano[c + i - (COLONNE * 2)] == OCCUPATO ){ /* Inserisco anche la verifica che sotto il tetramino ci sia un pezzo,  
+      	  	    else if (*p == 5 && found == FALSE ){ /* Inserisco anche la verifica che sotto il tetramino ci sia un pezzo,  
 																				  dove deve appoggiarsi. dovrò fare così anche con P = 4?*/
-                  contatto = c - COLONNE;
+                  contatto = c + COLONNE;
                   found = TRUE;
                   }
                   else if(*inizio == 7){
@@ -306,6 +345,7 @@ int contatto (campo_di_gioco piano, int scelta_colonna, int *p){
 					}
         	        else if (*p == 1 || *p == 2 || *p == 3){
                       contatto = c - COLONNE;
+					  contatto_minore = TRUE;
                       found = TRUE;
                       }   
 					  else
@@ -358,10 +398,10 @@ bool_t salva_tetramino (campo_di_gioco piano, int *p, int scelta_colonna){
 	     is_ok == TRUE;
 
           for(i = 0; i<size; i++){
-			/******************************************************
-			*  scelta rappresenta la selezione attuale nel piano *
-			*  riquadro_1 si trova sopra riquadro nel piano         *
-			*  riquadro_2 si trova sopra riquadro_1 nel piano       *
+			/*******************************************************
+			*  scelta rappresenta la selezione attuale nel piano   *
+			*  riquadro_1 si trova sopra riquadro nel piano        *
+			*  riquadro_2 si trova sopra riquadro_1 nel piano      *
 			*******************************************************/
             	if(*inizio == 6){
             		piano[scelta - COLONNE] = OCCUPATO;
@@ -407,7 +447,7 @@ bool_t salva_tetramino (campo_di_gioco piano, int *p, int scelta_colonna){
 
 /*scelta rotazione*/
 
-int * rotazione(char code){
+int * rotazione(char code, int colonna_scelta_dal_giocatore){
   int *p;
   int chose = 0;
   bool_t is_ok = FALSE;
@@ -420,7 +460,7 @@ int * rotazione(char code){
       printf("2. ruotare di 90 gradi\n");
       printf("3. ruotare di 180 gradi\n");
 	  printf("4. ruotare di 270 gradi\n");
-	  stampa_anteprima(J_);
+	  stampa_anteprima(colonna_scelta_dal_giocatore,J_);
 	  printf("Scelta: ");
       scanf(" %d", &chose);
 		  while (getchar() != '\n') /*salta alla fine della riga*/
@@ -449,7 +489,7 @@ int * rotazione(char code){
     while( is_ok == FALSE ){
       printf("1. i orrizzontale\n");
 	  printf("2. i verticale\n");
-	  stampa_anteprima(I_);
+	  stampa_anteprima(colonna_scelta_dal_giocatore,I_);
 	  printf("Scelta: ");
       scanf(" %d", &chose);
 		  while (getchar() != '\n') /*salta alla fine della riga*/
@@ -479,7 +519,7 @@ int * rotazione(char code){
           printf("2. ruotare di 90 gradi\n");
           printf("3. ruotare di 180 gradi\n");
 	      printf("4. ruotare di 270 gradi\n");
-		  stampa_anteprima(L_);
+		  stampa_anteprima(colonna_scelta_dal_giocatore,L_);
           printf("Scelta: ");
           scanf(" %d", &chose);
 		    while (getchar() != '\n') /*salta alla fine della riga*/
@@ -508,7 +548,7 @@ int * rotazione(char code){
         while( is_ok == FALSE ){
           printf("1. i orrizzontale\n");
 	      printf("2. i verticale\n");
-		  stampa_anteprima(S_);
+		  stampa_anteprima(colonna_scelta_dal_giocatore,S_);
 	      printf("Scelta: ");
           scanf(" %d", &chose);
 		    while (getchar() != '\n') /*salta alla fine della riga*/
@@ -531,7 +571,7 @@ int * rotazione(char code){
         while( is_ok == FALSE ){;
           printf("1. i orrizzontale\n");
 	      printf("2. i verticale\n");
-		  stampa_anteprima(Z_);
+		  stampa_anteprima(colonna_scelta_dal_giocatore,Z_);
 	      printf("Scelta: ");
           scanf(" %d", &chose);
 		    while (getchar() != '\n') /*salta alla fine della riga*/
@@ -556,7 +596,7 @@ int * rotazione(char code){
           printf("2. ruotare di 90 gradi\n");
           printf("3. ruotare di 180 gradi\n");
 	      printf("4. ruotare di 270 gradi\n");
-		  stampa_anteprima(T_);
+		  stampa_anteprima(colonna_scelta_dal_giocatore,T_);
           printf("Scelta: ");
           scanf(" %d", &chose);
 		    while (getchar() != '\n') /*salta alla fine della riga*/
@@ -601,7 +641,7 @@ void Visualizza_pezzi_disponibili(){
 
 }
 
-int * scelta (){
+int * scelta (int colonna_scelta_dal_giocatore){
 	char code;
 	int *p;
 
@@ -623,7 +663,7 @@ int * scelta (){
 						break;
 					  }
 					  I_free--;
-			          p = rotazione(code);
+			          p = rotazione(code, colonna_scelta_dal_giocatore);
 					  is_ok = TRUE;
 					  break;
 			case 'j': if(J_free <= 0){
@@ -632,7 +672,7 @@ int * scelta (){
 						break;
 					  }
 					  J_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
 					  is_ok = TRUE;
 			          break;
 			case 'l': if(L_free <= 0){
@@ -641,7 +681,7 @@ int * scelta (){
 						break;
 					  }
 					  L_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
                       is_ok = TRUE;
 			          break;
             case 'o': if(O_free <= 0){
@@ -650,7 +690,7 @@ int * scelta (){
 						break;
 					  }
 					  O_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
                       is_ok = TRUE;
 			          break;
             case 's': if(S_free <= 0){
@@ -659,7 +699,7 @@ int * scelta (){
 						break;
 					  }
 					  S_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
                       is_ok = TRUE;
 			          break;
             case 't': if(T_free <= 0){
@@ -668,7 +708,7 @@ int * scelta (){
 						break;
 					  }
 					  T_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
                       is_ok = TRUE;
 			          break;
             case 'z': if(Z_free <= 0){
@@ -677,7 +717,7 @@ int * scelta (){
 						break;
 					  }
 					  Z_free--;
-					  p = rotazione(code);
+					  p = rotazione(code, colonna_scelta_dal_giocatore);
                       is_ok = TRUE;
 			          break;
 			default: printf("!!! ATTENZIONE !!!:\tScelta sbagliata. Selezionane un altra.\n");
@@ -719,7 +759,7 @@ void seleziona_tetramino(campo_di_gioco piano, int RIGHE, int COLONNE, int turno
 	    int *p;
         int i;
         
-	    p = scelta();
+	    p = scelta(scelta_colonna);
         
 		if(turno == 1)
 	      is_ok = salva_tetramino(piano, p, scelta_colonna);
@@ -794,22 +834,6 @@ int calcola_punti(campo_di_gioco piano, int RIGHE, int COLONNE) {
 			else
               return 0;
 }
-
-
-
-/*Funzione che uso a scopo di test per visualizzare il numero di caselle nella griglia di gioco*/
-void test(campo_di_gioco piano, int RIGHE, int COLONNE){
-	printf("\n\n---TEST----\n\n");
-	int r, c, count = 0;
-    for (r=0; r<RIGHE; r++) {
-        for (c=0; c<COLONNE; c++) {
-            printf("%4d", count);
-            count++;
-        }
-        printf("\n"); 
-    }
-}
-
 
 /****************************************************************
 * stampa:	stampa il campo di gioco           				    *
@@ -915,6 +939,27 @@ void TEST_INVERTI(campo_di_gioco campo_giocatore, int RIGHE, int COLONNE){
 	}
 }
 
+
+/**
+ * @brief funzione che uso a scopo di test
+ * 
+ * @param piano 
+ * @param RIGHE 
+ * @param COLONNE 
+ * @return void 
+ */
+void test(campo_di_gioco piano, int RIGHE, int COLONNE){
+	printf("\n\n---TEST----\n\n");
+	int r, c, count = 0;
+    for (r=0; r<RIGHE; r++) {
+        for (c=0; c<COLONNE; c++) {
+            printf("%4d", count);
+            count++;
+        }
+        printf("\n"); 
+    }
+}
+
 /*************************************************//**
 * main:	chiede all'utente di immettere un codice, poi           
 *	chiama una funzione per eseguire l'azione                   
@@ -973,7 +1018,7 @@ int main()
   printf("Per iniziare a giocare premi INVIO.\n");
   getchar();
   printf("\n\n");
-
+  test(campo_giocatore_1,RIGHE,COLONNE);
 do
 {
   if(giocatori != MULTI_PLAYER && giocatori != SINGLE_PLAYER){

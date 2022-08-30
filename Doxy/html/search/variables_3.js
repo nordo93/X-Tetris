@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['l_5f_0',['L_',['../tetrix_8c.html#a4e55fdb7954a23a3d4225301663b5e42',1,'L_():&#160;tetrix.c'],['../tetrix__2_8c.html#a4e55fdb7954a23a3d4225301663b5e42',1,'L_():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a4e55fdb7954a23a3d4225301663b5e42',1,'L_():&#160;tetrix_OLD.c']]],
-  ['l_5f180_1',['L_180',['../tetrix_8c.html#a9506433791b39d653329d2e43b3509ba',1,'L_180():&#160;tetrix.c'],['../tetrix__2_8c.html#a9506433791b39d653329d2e43b3509ba',1,'L_180():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a9506433791b39d653329d2e43b3509ba',1,'L_180():&#160;tetrix_OLD.c']]],
-  ['l_5f270_2',['L_270',['../tetrix_8c.html#a896b7db002fccfe1fe4f9fc7c219a775',1,'L_270():&#160;tetrix.c'],['../tetrix__2_8c.html#a896b7db002fccfe1fe4f9fc7c219a775',1,'L_270():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a896b7db002fccfe1fe4f9fc7c219a775',1,'L_270():&#160;tetrix_OLD.c']]],
-  ['l_5f90_3',['L_90',['../tetrix_8c.html#a71b2c3c341368dba402df00349b08f71',1,'L_90():&#160;tetrix.c'],['../tetrix__2_8c.html#a71b2c3c341368dba402df00349b08f71',1,'L_90():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a71b2c3c341368dba402df00349b08f71',1,'L_90():&#160;tetrix_OLD.c']]],
-  ['l_5ffree_4',['L_free',['../tetrix_8c.html#a62a7aff152eb2b680f14719a0946b0cd',1,'L_free():&#160;tetrix.c'],['../tetrix__2_8c.html#a62a7aff152eb2b680f14719a0946b0cd',1,'L_free():&#160;tetrix_2.c'],['../tetrix___o_l_d_8c.html#a62a7aff152eb2b680f14719a0946b0cd',1,'L_free():&#160;tetrix_OLD.c']]]
+  ['i_0',['i',['../test__case_8txt.html#acb559820d9ca11295b4500f179ef6392',1,'test_case.txt']]],
+  ['i_5f_1',['I_',['../tetrix___one_file_8c.html#a486a6c33397876c16f1eed6ee6db9a6e',1,'tetrix_OneFile.c']]],
+  ['i_5f180_2',['I_180',['../tetrix___one_file_8c.html#a70bb3debf589d0e6cb018c995b9b55b7',1,'tetrix_OneFile.c']]],
+  ['i_5ffree_3',['I_free',['../tetrix___one_file_8c.html#ad6fc8f02b9b9dd16cbb053cb94d9d75d',1,'tetrix_OneFile.c']]],
+  ['inverti_5fcampo_4',['inverti_campo',['../tetrix___one_file_8c.html#a051ce5d94ece76dfba76cd03264c2486',1,'tetrix_OneFile.c']]]
 ];
