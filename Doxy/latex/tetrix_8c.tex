@@ -7,13 +7,13 @@
 \begin{DoxyCompactItemize}
 \item 
 typedef enum \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} \mbox{\hyperlink{tetrix_8c_a727a6f710e0f7bcf136b908b5cff365d}{giocatori\+\_\+t}}
-\item 
+\begin{DoxyCompactList}\small\item\em Definisco un enumeratore per il numero di giocatori. \end{DoxyCompactList}\item 
 typedef enum \mbox{\hyperlink{tetrix_8c_aacae98a513bf46f84ca1f3554bae431b}{riquadro}} \mbox{\hyperlink{tetrix_8c_aa7f1ff8f4ac9b5f9dc398111841d9d77}{riquadro\+\_\+t}}
-\item 
+\begin{DoxyCompactList}\small\item\em Definisco un enumeratore per sapere lo stato della casella del piano di gioco. \end{DoxyCompactList}\item 
 typedef \mbox{\hyperlink{tetrix_8c_aa7f1ff8f4ac9b5f9dc398111841d9d77}{riquadro\+\_\+t}} $\ast$ \mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}}
-\begin{DoxyCompactList}\small\item\em nota\+: campo\+\_\+di\+\_\+gioco e\textquotesingle{} un puntatore che punt al campo di gioco \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em campo\+\_\+di\+\_\+gioco e\textquotesingle{} un puntatore che punt al campo di gioco \end{DoxyCompactList}\item 
 typedef enum \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848}{bool\+\_\+e}} \mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em uso questo enum per supportare il tipo bool anche su standard C89 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,20 +21,20 @@ enum \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} \
 , \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faaf64ffcc804f85cc65366369011db5768}{MULTI\+\_\+\+PLAYER}} = 2
 , \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faa616ede6b6f3a1d38a724d1168ddf1adf}{NOT\+\_\+\+SELECTED}} = -\/99
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Definisco un enumeratore per il numero di giocatori. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{tetrix_8c_aacae98a513bf46f84ca1f3554bae431b}{riquadro}} \{ \mbox{\hyperlink{tetrix_8c_aacae98a513bf46f84ca1f3554bae431baf9428c94346b50d578b820a28ca79855}{VUOTO}}
 , \mbox{\hyperlink{tetrix_8c_aacae98a513bf46f84ca1f3554bae431ba86eb6f31a721a0cffb9e409a63428cb7}{OCCUPATO}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Definisco un enumeratore per sapere lo stato della casella del piano di gioco. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848}{bool\+\_\+e}} \{ \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}} = 0
 , \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}{TRUE}} = 1
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em uso questo enum per supportare il tipo bool anche su standard C89 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{tetrix_8c_a5888954e236254cc7e6ff5cffedbf90f}{init}} (\mbox{\hyperlink{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}{campo\+\_\+di\+\_\+gioco}} piano, int riga, int colonna)
-\begin{DoxyCompactList}\small\item\em Inizializzatore\+: inizializza il campo da gioco a VUOTO. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inizializza il campo da gioco a tutto vuoto. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{tetrix_8c_abeb1901c55d057632a6bd4a45fe6d75b}{stampa\+\_\+anteprima}} (int colonna\+\_\+scelta\+\_\+dal\+\_\+giocatore, int $\ast$tetramino)
 \begin{DoxyCompactList}\small\item\em Funzione che uso per visualizzare un ateprima del tetramino scelto dal giocatore. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{tetrix_8c_a2444104362cf4314a0b97fa2eaf0d58e}{verifica\+\_\+uscita}} (int $\ast$p, int righe\+\_\+rimanenti, int colonna, int \mbox{\hyperlink{tetrix_8c_a18f5b9291b9589c18c9f53d9d3531b5c}{contatto}})
@@ -77,9 +77,9 @@ const int \mbox{\hyperlink{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}{RIGHE}} 
 const int \mbox{\hyperlink{tetrix_8c_ae45bf4c0e6b1d99fc99e157f74cb1ea0}{COLONNE}} = \mbox{\hyperlink{tetramini_8h_ac5a3a1569e5f4d986ec6ece10286c08a}{column}}
 \item 
 \mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}} \mbox{\hyperlink{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}{Perdita\+\_\+uscita\+\_\+campo}} = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}}
-\begin{DoxyCompactList}\small\item\em Definisco variabili globali per l\textquotesingle{}errore di uscire dalle righe colonne. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Definisco variabili globali per l\textquotesingle{}errore di uscire dalle righe colonne Uguale a TRUE quando un giocatore esce dal campo e quindi dovrà perdere la partita. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}} \mbox{\hyperlink{tetrix_8c_a051ce5d94ece76dfba76cd03264c2486}{inverti\+\_\+campo}} = \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}}
-\begin{DoxyCompactList}\small\item\em Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer Uguale a TRUE quando uno dei due giocatori cancella 3 righe o + contemporanamente. Inverto quindi il campo dell\textquotesingle{}avversario. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -104,6 +104,10 @@ Copyright (c) 2022
 \doxysubsubsection{\texorpdfstring{bool\_t}{bool\_t}}
 {\footnotesize\ttfamily typedef enum \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848}{bool\+\_\+e}} \mbox{\hyperlink{tetrix_8c_aa3a317bac4a25cedbce8bdb3a0e0d42d}{bool\+\_\+t}}}
 
+
+
+uso questo enum per supportare il tipo bool anche su standard C89 
+
 \mbox{\Hypertarget{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}\label{tetrix_8c_ac5a058fd5c1d22d70656dc12dac0c2a9}} 
 \index{tetrix.c@{tetrix.c}!campo\_di\_gioco@{campo\_di\_gioco}}
 \index{campo\_di\_gioco@{campo\_di\_gioco}!tetrix.c@{tetrix.c}}
@@ -112,7 +116,7 @@ Copyright (c) 2022
 
 
 
-nota\+: campo\+\_\+di\+\_\+gioco e\textquotesingle{} un puntatore che punt al campo di gioco 
+campo\+\_\+di\+\_\+gioco e\textquotesingle{} un puntatore che punt al campo di gioco 
 
 \mbox{\Hypertarget{tetrix_8c_a727a6f710e0f7bcf136b908b5cff365d}\label{tetrix_8c_a727a6f710e0f7bcf136b908b5cff365d}} 
 \index{tetrix.c@{tetrix.c}!giocatori\_t@{giocatori\_t}}
@@ -120,11 +124,19 @@ nota\+: campo\+\_\+di\+\_\+gioco e\textquotesingle{} un puntatore che punt al ca
 \doxysubsubsection{\texorpdfstring{giocatori\_t}{giocatori\_t}}
 {\footnotesize\ttfamily typedef enum \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}} \mbox{\hyperlink{tetrix_8c_a727a6f710e0f7bcf136b908b5cff365d}{giocatori\+\_\+t}}}
 
+
+
+Definisco un enumeratore per il numero di giocatori. 
+
 \mbox{\Hypertarget{tetrix_8c_aa7f1ff8f4ac9b5f9dc398111841d9d77}\label{tetrix_8c_aa7f1ff8f4ac9b5f9dc398111841d9d77}} 
 \index{tetrix.c@{tetrix.c}!riquadro\_t@{riquadro\_t}}
 \index{riquadro\_t@{riquadro\_t}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{riquadro\_t}{riquadro\_t}}
 {\footnotesize\ttfamily typedef enum \mbox{\hyperlink{tetrix_8c_aacae98a513bf46f84ca1f3554bae431b}{riquadro}} \mbox{\hyperlink{tetrix_8c_aa7f1ff8f4ac9b5f9dc398111841d9d77}{riquadro\+\_\+t}}}
+
+
+
+Definisco un enumeratore per sapere lo stato della casella del piano di gioco. 
 
 
 
@@ -135,13 +147,17 @@ nota\+: campo\+\_\+di\+\_\+gioco e\textquotesingle{} un puntatore che punt al ca
 \doxysubsubsection{\texorpdfstring{bool\_e}{bool\_e}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{tetrix_8c_a3c5c82810d69281c45ae525b29779848}{bool\+\_\+e}}}
 
+
+
+uso questo enum per supportare il tipo bool anche su standard C89 
+
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{FALSE@{FALSE}!tetrix.c@{tetrix.c}}\index{tetrix.c@{tetrix.c}!FALSE@{FALSE}}}\mbox{\Hypertarget{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}\label{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa1e095cc966dbecf6a0d8aad75348d1a}} 
-FALSE&\\
+FALSE&FALSE = 0 \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TRUE@{TRUE}!tetrix.c@{tetrix.c}}\index{tetrix.c@{tetrix.c}!TRUE@{TRUE}}}\mbox{\Hypertarget{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}\label{tetrix_8c_a3c5c82810d69281c45ae525b29779848aa82764c3079aea4e60c80e45befbb839}} 
-TRUE&\\
+TRUE&TRUE = 1 \\
 \hline
 
 \end{DoxyEnumFields}
@@ -151,17 +167,21 @@ TRUE&\\
 \doxysubsubsection{\texorpdfstring{giocatori}{giocatori}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0fa}{giocatori}}}
 
-Definisco una variabile per il numero di giocatori \begin{DoxyEnumFields}{Enumerator}
+
+
+Definisco un enumeratore per il numero di giocatori. 
+
+\begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SINGLE\_PLAYER@{SINGLE\_PLAYER}!tetrix.c@{tetrix.c}}\index{tetrix.c@{tetrix.c}!SINGLE\_PLAYER@{SINGLE\_PLAYER}}}\mbox{\Hypertarget{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faae0c9d3e5c71ae4b23a63b36eaac2f918}\label{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faae0c9d3e5c71ae4b23a63b36eaac2f918}} 
-SINGLE\+\_\+\+PLAYER&\\
+SINGLE\+\_\+\+PLAYER&Quando la modalità selezionata è giocatore singolo \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MULTI\_PLAYER@{MULTI\_PLAYER}!tetrix.c@{tetrix.c}}\index{tetrix.c@{tetrix.c}!MULTI\_PLAYER@{MULTI\_PLAYER}}}\mbox{\Hypertarget{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faaf64ffcc804f85cc65366369011db5768}\label{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faaf64ffcc804f85cc65366369011db5768}} 
-MULTI\+\_\+\+PLAYER&\\
+MULTI\+\_\+\+PLAYER&Quando la modalità selezionata è multigiocatore \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{NOT\_SELECTED@{NOT\_SELECTED}!tetrix.c@{tetrix.c}}\index{tetrix.c@{tetrix.c}!NOT\_SELECTED@{NOT\_SELECTED}}}\mbox{\Hypertarget{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faa616ede6b6f3a1d38a724d1168ddf1adf}\label{tetrix_8c_a62f731b0931d5118f6d2d1fa92f6f0faa616ede6b6f3a1d38a724d1168ddf1adf}} 
-NOT\+\_\+\+SELECTED&\\
+NOT\+\_\+\+SELECTED&Quando la modalità non è stata selezionata \\
 \hline
 
 \end{DoxyEnumFields}
@@ -171,13 +191,17 @@ NOT\+\_\+\+SELECTED&\\
 \doxysubsubsection{\texorpdfstring{riquadro}{riquadro}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{tetrix_8c_aacae98a513bf46f84ca1f3554bae431b}{riquadro}}}
 
-casella del piano di gioco che può essere occupato o meno. \begin{DoxyEnumFields}{Enumerator}
+
+
+Definisco un enumeratore per sapere lo stato della casella del piano di gioco. 
+
+\begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{VUOTO@{VUOTO}!tetrix.c@{tetrix.c}}\index{tetrix.c@{tetrix.c}!VUOTO@{VUOTO}}}\mbox{\Hypertarget{tetrix_8c_aacae98a513bf46f84ca1f3554bae431baf9428c94346b50d578b820a28ca79855}\label{tetrix_8c_aacae98a513bf46f84ca1f3554bae431baf9428c94346b50d578b820a28ca79855}} 
-VUOTO&\\
+VUOTO&se la casella non contiene un pezzo di tetramino \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{OCCUPATO@{OCCUPATO}!tetrix.c@{tetrix.c}}\index{tetrix.c@{tetrix.c}!OCCUPATO@{OCCUPATO}}}\mbox{\Hypertarget{tetrix_8c_aacae98a513bf46f84ca1f3554bae431ba86eb6f31a721a0cffb9e409a63428cb7}\label{tetrix_8c_aacae98a513bf46f84ca1f3554bae431ba86eb6f31a721a0cffb9e409a63428cb7}} 
-OCCUPATO&\\
+OCCUPATO&quando la casella contiene un pezzo del tetramino \\
 \hline
 
 \end{DoxyEnumFields}
@@ -204,8 +228,20 @@ OCCUPATO&\\
 
 
 
-Inizializzatore\+: inizializza il campo da gioco a VUOTO. 
+Inizializza il campo da gioco a tutto vuoto. 
 
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{tetrix_8c_aacae98a513bf46f84ca1f3554bae431b}{riquadro}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em piano} & viene passato il puntatore al piano di gioco, quello del giocatore 1 o 2 \\
+\hline
+{\em riga} & viene passato il numero di righe del campo \\
+\hline
+{\em colonna} & viene passato il numero di colonne del campo \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{tetrix_8c_aa11dce9cbdbceb69cc11f68db2609547}\label{tetrix_8c_aa11dce9cbdbceb69cc11f68db2609547}} 
 \index{tetrix.c@{tetrix.c}!inverti\_campo\_di\_gioco@{inverti\_campo\_di\_gioco}}
 \index{inverti\_campo\_di\_gioco@{inverti\_campo\_di\_gioco}!tetrix.c@{tetrix.c}}
@@ -314,7 +350,7 @@ Funzione che uso per visualizzare un ateprima del tetramino scelto dal giocatore
 {\em colonna\+\_\+scelta\+\_\+dal\+\_\+giocatore} & la colonna selezionata dal giocatore viene passata alla funzione \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{tetrix_8c_a96526f8643da2c5248062e5d2832f069}\label{tetrix_8c_a96526f8643da2c5248062e5d2832f069}} 
+sono 16 caselle in tutto, un quadrato 4 x 4 , il fondo della prima colonna è il 12 quadrato quindi 4 x 4 -\/ 4\mbox{\Hypertarget{tetrix_8c_a96526f8643da2c5248062e5d2832f069}\label{tetrix_8c_a96526f8643da2c5248062e5d2832f069}} 
 \index{tetrix.c@{tetrix.c}!test@{test}}
 \index{test@{test}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{test()}{test()}}
@@ -409,8 +445,11 @@ if($\ast$p == 1 \&\& sottrazione\+\_\+riga == 0)
 
 
 
-Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer. 
+Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer Uguale a TRUE quando uno dei due giocatori cancella 3 righe o + contemporanamente. Inverto quindi il campo dell\textquotesingle{}avversario. 
 
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{tetrix_8c_aa11dce9cbdbceb69cc11f68db2609547}{inverti\+\_\+campo\+\_\+di\+\_\+gioco}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}\label{tetrix_8c_a41c911f3da02a829ac482dd61c0d8528}} 
 \index{tetrix.c@{tetrix.c}!Perdita\_uscita\_campo@{Perdita\_uscita\_campo}}
 \index{Perdita\_uscita\_campo@{Perdita\_uscita\_campo}!tetrix.c@{tetrix.c}}
@@ -419,7 +458,7 @@ Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer.
 
 
 
-Definisco variabili globali per l\textquotesingle{}errore di uscire dalle righe colonne. 
+Definisco variabili globali per l\textquotesingle{}errore di uscire dalle righe colonne Uguale a TRUE quando un giocatore esce dal campo e quindi dovrà perdere la partita. 
 
 \mbox{\Hypertarget{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}\label{tetrix_8c_ae9f8d8d635995b45444dd02143e0a102}} 
 \index{tetrix.c@{tetrix.c}!RIGHE@{RIGHE}}

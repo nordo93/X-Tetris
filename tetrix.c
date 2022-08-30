@@ -37,22 +37,28 @@ typedef enum riquadro
 
 /** @brief campo_di_gioco e' un puntatore che punt al campo di gioco */
 typedef riquadro_t *campo_di_gioco;
-
+/** @brief uso questo enum per supportare il tipo bool anche su standard C89*/
 typedef enum bool_e
 {
-    FALSE = 0,
-    TRUE = 1
+    FALSE = 0,  /**< FALSE = 0*/
+    TRUE = 1    /**< TRUE = 1*/
 } bool_t;
 
-/** @brief Definisco variabili globali per l'errore di uscire dalle righe colonne*/
+/** @brief Definisco variabili globali per l'errore di uscire dalle righe colonne
+*   Uguale a TRUE quando un giocatore esce dal campo e quindi dovrà perdere la partita. */
 bool_t Perdita_uscita_campo = FALSE;
 
-/** @brief Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer */
-
+/** @brief Definisco una variabile globale per il bonus da 3 punti o + per il multiplayer
+*   Uguale a TRUE quando uno dei due giocatori cancella 3 righe o + contemporanamente.
+*   Inverto quindi il campo dell'avversario @see inverti_campo_di_gioco*/
 bool_t inverti_campo = FALSE;
 
 /**
- * @brief Inizializzatore: inizializza il campo da gioco a VUOTO
+ * @brief Inizializza il campo da gioco a tutto vuoto @see riquadro
+ * 
+ * @param piano viene passato il puntatore al piano di gioco, quello del giocatore 1 o 2
+ * @param riga viene passato il numero di righe del campo
+ * @param colonna viene passato il numero di colonne del campo
  */
 void init(campo_di_gioco piano, int riga, int colonna) {
     int r,c;
@@ -73,7 +79,7 @@ void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
 	printf("-ANTEPRIMA scelta 1-\n");
 
 	campo_di_gioco campo_tetramino = (campo_di_gioco) malloc(size*size*sizeof(riquadro_t));
-	int fondo_anteprima = (size*size) - (size); /*sono 16 caselle in tutto, un quadrato 4 x 4 , il fondo della prima colonna è il 12 quadrato quindi 4 x 4 - 4*/
+	int fondo_anteprima = (size*size) - (size); /** sono 16 caselle in tutto, un quadrato 4 x 4 , il fondo della prima colonna è il 12 quadrato quindi 4 x 4 - 4*/
 	init(campo_tetramino, 4, 4);
 	int i,r,c;
 	
