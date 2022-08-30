@@ -48,26 +48,45 @@
  * # 7 = 4 blocchi sovrapposti
  */
 
-/* Differenti versioni del tetramino I */
+/** @brief Differenti versioni del tetramino I
+* @param I_free quanti tetramino I sono disponibili
+* @param I_ tetramino i in posizione base
+* @param I_180 tetramino i in posizione verticale
+*/
 int I_free = 20; /*Indico quanti pezzi sono disponibili di I*/
 int I_[size]={1,1,1,1};
 int I_180[size]={7,0,0,0};
 
-/* Differenti versioni del tetramino J */
+/** @brief Differenti versioni del tetramino J
+* @param J_free quanti tetramino J sono disponibili
+* @param J_ tetramino J in posizione base
+* @param J_90 tetramino J ruotata di 90 gradi
+* @param J_180 tetramino J ruotata di 180 gradi
+* @param J_270 tetramino J ruotata di 270 gradi
+*/
 int J_free = 20;
 int J_[size]={2,1,1,0};
 int J_90[size]={3,5,0,0};
 int J_180[size]={4,4,2,0};
 int J_270[size]={1,3,0,0};
 
-/* Differenti versioni del tetramino L*/
+/** @brief Differenti versioni del tetramino L
+* @param L_free quanti tetramino L sono disponibili
+* @param L_ tetramino L in posizione base
+* @param L_90 tetramino L ruotata di 90 gradi
+* @param L_180 tetramino L ruotata di 180 gradi
+* @param L_270 tetramino L ruotata di 270 gradi
+*/
 int L_free = 20;
 int L_[size]={1,1,2,0};
 int L_90[size]={3,1,0,0};
 int L_180[size]={2,4,4,0};
 int L_270[size]={5,3,0,0};
 
-/* Differenti versioni del tetramino O */
+/** @brief Differenti versioni del tetramino O
+* @param O_free quanti tetramino O sono disponibili
+* @param O_ tetramino i in posizione base
+*/
 int O_free = 20;
 int O_[size]={2,2,0,0};
 
@@ -212,7 +231,7 @@ void stampa_anteprima(int colonna_scelta_dal_giocatore, int * tetramino){
  * @param colonna questa indica la colonna scelta dal giocatore e aumenta di valore in base a quanto occupa il tetrmaino in termini di larghezza
  * @param contatto questo è dove il tetramino è appogiato, lo uso come valore di entrata e uscita per verificare gli errori, se il valore cambia allora il tetramino è uscito dallo spazio di gioco
  * @return ritrona di nuovo contatto se non ci sono errori, sennò ritorna -1
- * @attention guardare info sotto, aggiungo questa condizione perchè in caso di tetramini come l a 90 gradi il primo valore del vettore è più alto del secondo
+ * @attention guardare note sotto, aggiungo questa condizione perchè in caso di tetramini come l a 90 gradi il primo valore del vettore è più alto del secondo
  */
 int verifica_uscita(int *p, int righe_rimanenti, int colonna, int contatto){
 	int i;
@@ -228,7 +247,7 @@ int verifica_uscita(int *p, int righe_rimanenti, int colonna, int contatto){
       return -1;
 	}
 
-	if(*p == 1 && sottrazione_riga == 0) /** @if if(*p == 1 && sottrazione_riga == 0)*/
+	if(*p == 1 && sottrazione_riga == 0) /** @note if(*p == 1 && sottrazione_riga == 0)*/
 	  sottrazione_riga = 1;
       else if(*p == 2 || *p == 4 ) 
 	    sottrazione_riga = 2;

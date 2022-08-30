@@ -540,14 +540,20 @@ verifica che il tetramino inserito non superi il limite di colonne e righe massi
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int 
+ritrona di nuovo contatto se non ci sono errori, sennò ritorna -\/1 
 \end{DoxyReturn}
+\begin{DoxyAttention}{Attention}
+guardare info sotto, aggiungo questa condizione perchè in caso di tetramini come l a 90 gradi il primo valore del vettore è più alto del secondo 
+\end{DoxyAttention}
+\begin{DoxySeeAlso}{See also}
+
+\end{DoxySeeAlso}
 
 \begin{DoxyParams}{Parameters}
 {\em Perdita\+\_\+uscita\+\_\+campo} & quando è a TRUE indica l\textquotesingle{}uscita dal campo e il giocatore perde\\
 \hline
 \end{DoxyParams}
-aggiungo questa condizione perchè in caso di tetramini come l a 90 gradi il primo valore del vettore è più alto del secondo\mbox{\Hypertarget{tetrix_8c_aa3bc71145727910fda60fad153a740bd}\label{tetrix_8c_aa3bc71145727910fda60fad153a740bd}} 
+\mbox{\Hypertarget{tetrix_8c_aa3bc71145727910fda60fad153a740bd}\label{tetrix_8c_aa3bc71145727910fda60fad153a740bd}} 
 \index{tetrix.c@{tetrix.c}!Visualizza\_pezzi\_disponibili@{Visualizza\_pezzi\_disponibili}}
 \index{Visualizza\_pezzi\_disponibili@{Visualizza\_pezzi\_disponibili}!tetrix.c@{tetrix.c}}
 \doxysubsubsection{\texorpdfstring{Visualizza\_pezzi\_disponibili()}{Visualizza\_pezzi\_disponibili()}}
