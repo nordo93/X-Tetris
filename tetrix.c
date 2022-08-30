@@ -372,10 +372,10 @@ bool_t salva_tetramino (campo_di_gioco piano, int *p, int scelta_colonna){
 	     is_ok == TRUE;
 
           for(i = 0; i<size; i++){
-			/******************************************************
-			*  scelta rappresenta la selezione attuale nel piano *
-			*  riquadro_1 si trova sopra riquadro nel piano         *
-			*  riquadro_2 si trova sopra riquadro_1 nel piano       *
+			/*******************************************************
+			*  scelta rappresenta la selezione attuale nel piano   *
+			*  riquadro_1 si trova sopra riquadro nel piano        *
+			*  riquadro_2 si trova sopra riquadro_1 nel piano      *
 			*******************************************************/
             	if(*inizio == 6){
             		piano[scelta - COLONNE] = OCCUPATO;
